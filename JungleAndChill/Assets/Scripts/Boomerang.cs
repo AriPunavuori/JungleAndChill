@@ -52,12 +52,12 @@ public class Boomerang : MonoBehaviour {
     StopBoomeranging();
   }
 
-  private void StartBoomeranging() {
+  public void StartBoomeranging() {
     boomeranging = true;
     prevAngle = 0;
     boomerangStart = Time.time;
   }
-  private void StopBoomeranging() {
+  public void StopBoomeranging() {
     boomeranging = false;
     boomerangStart = 0;
   }

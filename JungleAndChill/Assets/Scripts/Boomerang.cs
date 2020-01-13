@@ -11,7 +11,7 @@ public class Boomerang : MonoBehaviour {
   public float curveDuration = 3;
   [Tooltip("Percentage of angular rotation converted to upwards(local) motion")]
   public float spinLift = 1;
-  public float maxRotation = 180;
+  public float maxRotation = 240;
   public Vector3 testVelocity = new Vector3(1, 0, 0);
 
   private bool boomeranging = false;

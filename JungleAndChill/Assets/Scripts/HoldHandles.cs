@@ -11,6 +11,8 @@ public class HoldHandles : MonoBehaviour {
   private Transform[] handles;
 
   private void Start() {
+    var inter = GetComponent<Interactable>();
+    inter.onAttachedToHand += OnAttachedToHand;
     var handleGos = GetComponentsInChildren<Handle>();
     handles = handleGos.Map((v) => v.transform);
   }

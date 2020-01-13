@@ -10,7 +10,11 @@ public class Boomerang : MonoBehaviour {
   public AnimationCurve rotationCurve = new AnimationCurve();
   public float curveDuration = 3;
   [Tooltip("Percentage of angular rotation converted to upwards(local) motion")]
+  public bool disableGravity = false;
+  [MyBox.ConditionalField(nameof(disableGravity), true)]
   public float spinLift = 1;
+  [MyBox.ConditionalField(nameof(disableGravity), true)]
+  public float maxLift = 1;
   public float maxRotation = 240;
   public Vector3 testVelocity = new Vector3(1, 0, 0);
 
@@ -21,6 +25,10 @@ public class Boomerang : MonoBehaviour {
 
   [MyBox.ButtonMethod]
   public void TestThrow() {
+    var inter = GetComponent<Interactable>();
+    inter.onDetachedFromHand += StartBoomeranging;
+    inter.onAttachedToHand += StopBoomeranging;
+
     rb.velocity = testVelocity;
     StartBoomeranging();
   }
@@ -29,53 +37,39 @@ public class Boomerang : MonoBehaviour {
     rb = GetComponent<Rigidbody>();
   }
 
-  //-------------------------------------------------
-  // Called when this GameObject becomes attached to the hand
-  //-------------------------------------------------
-  private void OnAttachedToHand(Hand hand) {
-    StopBoomeranging();
-  }
-
-
-
-  //-------------------------------------------------
-  // Called when this GameObject is detached from the hand
-  //-------------------------------------------------
-  private void OnDetachedFromHand(Hand hand) {
-    StartBoomeranging();
-  }
-
-  //-------------------------------------------------
-  // Called when this GameObject is detached from the hand
-  //-------------------------------------------------
   private void OnCollisionEnter(Collision col) {
     StopBoomeranging();
   }
 
-  private void StartBoomeranging() {
+  private void StartBoomeranging(Hand hand = default(Hand)) {
+    if (disableGravity)
+      rb.useGravity = false;
     boomeranging = true;
     prevAngle = 0;
     boomerangStart = Time.time;
   }
-  private void StopBoomeranging() {
+  private void StopBoomeranging(Hand hand = default(Hand)) {
+    if (disableGravity)
+      rb.useGravity = true;
     boomeranging = false;
     boomerangStart = 0;
   }
 
-  //-------------------------------------------------
-  // Called every Update() while this GameObject is attached to the hand
-  //-------------------------------------------------
   private void Update() {
     if (boomeranging) {
-      rb.AddForce(transform.up * (rb.angularVelocity.y * spinLift));
 
-      var time = Time.time;
-      var fract = (time - boomerangStart) / curveDuration;
+      if (!disableGravity) {
+        var upVel = Vector3.Dot(rb.velocity, transform.up);
+        var newUpVel = Vector3.Dot(rb.velocity, transform.up);
+        rb.AddForce(transform.up * (Mathf.Min(rb.angularVelocity.y * spinLift, maxLift)));
+      }
+
+      var fract = (Time.time - boomerangStart) / curveDuration;
       var angle = rotationCurve.Evaluate(fract) * maxRotation;
       var angleDiff = angle - prevAngle;
       prevAngle = angle;
 
-      Quaternion rot = Quaternion.AngleAxis(angleDiff, Vector3.up);
+      Quaternion rot = Quaternion.AngleAxis(angleDiff, transform.up);
       rb.velocity = rot * rb.velocity;
 
       if (fract > 1) {

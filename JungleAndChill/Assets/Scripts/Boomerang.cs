@@ -25,16 +25,18 @@ public class Boomerang : MonoBehaviour {
 
   [MyBox.ButtonMethod]
   public void TestThrow() {
-    var inter = GetComponent<Interactable>();
-    inter.onDetachedFromHand += StartBoomeranging;
-    inter.onAttachedToHand += StopBoomeranging;
-
     rb.velocity = testVelocity;
     StartBoomeranging();
   }
 
   private void Start() {
     rb = GetComponent<Rigidbody>();
+    var inter = GetComponent<Interactable>();
+    inter.onDetachedFromHand += StartBoomeranging;
+    inter.onAttachedToHand += StopBoomeranging;
+
+    rb.velocity = testVelocity;
+    StartBoomeranging();
   }
 
   private void OnCollisionEnter(Collision col) {

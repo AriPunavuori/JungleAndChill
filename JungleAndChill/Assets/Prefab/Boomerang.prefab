@@ -110,7 +110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 712cd3a70a5a1da41a6594aac6a97abe, type: 2}
+  - {fileID: 2100000, guid: a97f545fdffb351468dbb0bd77748130, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,7 +334,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   curveDuration: 3
+  disableGravity: 0
   spinLift: 1.5
+  maxLift: 1
   maxRotation: 240
   testVelocity: {x: 5, y: 0, z: 0.1}
 --- !u!1 &5639476165701430728

@@ -7,7 +7,13 @@ using Valve.VR.InteractionSystem;
 public class HoldHandles : MonoBehaviour {
   [Tooltip("How much angular difference affects the calculation of closest position. The calculated distance to a position is multiplied by: 1 - (180 / angleDifference  * " + nameof(angleWeight) + ")")]
   public float angleWeight = 1;
-  public Transform[] handles;
+
+  private Transform[] handles;
+
+  private void Start() {
+    var handleGos = GetComponentsInChildren<Handle>();
+    handles = handleGos.Map((v) => v.transform);
+  }
 
   private void OnAttachedToHand(Hand hand) {
     var handPos = hand.transform.position;
@@ -27,10 +33,13 @@ public class HoldHandles : MonoBehaviour {
     }
     // Move to selected position
     if (selected != null) {
-      // Set position so that selected handle is at hand position
-      transform.position = hand.transform.position + (transform.position - selected.position);
-      // Set angle so that selected angle matches hand angle
-      transform.rotation = selected.rotation;
+      // Set angle so that handle matches the hand angle
+      var rot = hand.transform.rotation.eulerAngles - selected.transform.rotation.eulerAngles;
+      transform.Rotate(rot);
+
+      // Set position so that handle matches the hand position
+      var move = hand.transform.position - selected.transform.position;
+      transform.Translate(move);
     }
   }
 }

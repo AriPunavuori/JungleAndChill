@@ -3,7 +3,7 @@ using Valve.VR;
 public class ClimberHand : MonoBehaviour {
     public SteamVR_Input_Sources hand;
     public int touchedCount;
-    //public bool grabbing;
+    public bool grabbing;
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Climbable")) {

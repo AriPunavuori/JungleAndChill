@@ -10,7 +10,7 @@ public class Climber : MonoBehaviour {
     //public SteamVR_Action_Pose position;
     public ConfigurableJoint ClimberHandle;
 
-//    private bool Climbing;
+    //    private bool Climbing;
     public List<ClimberHand> grabbedHands = new List<ClimberHand>(); // first in list is active
 
     bool IsClimbing() {
@@ -41,7 +41,7 @@ public class Climber : MonoBehaviour {
 
             }
         } else {
-            if(hand.touchedCount > 0 && ToggleGripButton.GetStateDown(hand.hand)) {
+            if (hand.touchedCount > 0 && ToggleGripButton.GetStateDown(hand.hand)) {
                 grabbedHands.Insert(0, hand);
                 print("adding hand " + hand.name + " to list idx 0");
                 ClimberHandle.transform.position = hand.transform.position;
@@ -53,21 +53,48 @@ public class Climber : MonoBehaviour {
 }
 
 
-//void updateHand(ClimberHand Hand) {
-//    if (Climbing && Hand == ActiveHand) {
-//        if (!ToggleGripButton.GetState(Hand.Hand)) {
-//            ClimberHandle.connectedBody = null;
-//            Climbing = false;
-//            GetComponent<Rigidbody>().useGravity = true;
+//using UnityEngine;
+//using Valve.VR;
+
+//[RequireComponent(typeof(Rigidbody))]
+//public class Climber : MonoBehaviour {
+//    public ClimberHand RightHand;
+//    public ClimberHand LeftHand;
+//    public SteamVR_Action_Boolean ToggleGripButton;
+//    public SteamVR_Action_Pose position;
+//    public ConfigurableJoint ClimberHandle;
+
+//    private bool Climbing;
+//    private ClimberHand ActiveHand;
+
+//    void Update() {
+//        updateHand(RightHand);
+//        updateHand(LeftHand);
+//        if (Climbing) {
+//            ClimberHandle.targetPosition = -ActiveHand.transform.localPosition;//update collider for hand movment
 //        }
-//    } else {
-//        if (Hand.touchedCount > 0 ) {
-//            if (ToggleGripButton.GetStateDown(Hand.Hand)) {
-//                ActiveHand = Hand;
-//                Climbing = true;
-//                ClimberHandle.transform.position = Hand.transform.position;
-//                GetComponent<Rigidbody>().useGravity = false;
-//                ClimberHandle.connectedBody = GetComponent<Rigidbody>();
+//    }
+
+//    void updateHand(ClimberHand Hand) {
+//        if (Climbing && Hand == ActiveHand)//if is the hand used for climbing check if we are letting go.
+//        {
+//            if (ToggleGripButton.GetStateUp(Hand.hand)) {
+//                ClimberHandle.connectedBody = null;
+//                Climbing = false;
+
+//                GetComponent<Rigidbody>().useGravity = true;
+//            }
+//        } else {
+//            if (ToggleGripButton.GetStateDown(Hand.hand) || Hand.grabbing) {
+//                Hand.grabbing = true;
+//                if (Hand.touchedCount > 0) {
+//                    ActiveHand = Hand;
+//                    Climbing = true;
+//                    ClimberHandle.transform.position = Hand.transform.position;
+//                    GetComponent<Rigidbody>().useGravity = false;
+//                    ClimberHandle.connectedBody = GetComponent<Rigidbody>();
+//                    Hand.grabbing = false;
+//                }
 //            }
 //        }
 //    }

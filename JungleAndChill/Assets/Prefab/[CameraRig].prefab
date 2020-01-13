@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fc2a192a16fcb4caf150e765d48e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: 2
-  TouchedCount: 0
+  hand: 2
+  touchedCount: 0
   grabbing: 0
 --- !u!114 &6988691896829829052
 MonoBehaviour:
@@ -308,6 +308,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
   ClimberHandle: {fileID: 0}
+  grabbedHands: []
 --- !u!1 &6988691897946827364
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,8 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fc2a192a16fcb4caf150e765d48e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: 1
-  TouchedCount: 0
+  hand: 1
+  touchedCount: 0
   grabbing: 0
 --- !u!114 &6988691896369014723
 MonoBehaviour:

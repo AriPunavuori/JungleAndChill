@@ -5,69 +5,35 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 //-------------------------------------------------------------------------
-[RequireComponent(typeof(Interactable))]
+[RequireComponent(typeof(Throwable))]
 public class Boomerang : MonoBehaviour {
-  private Vector3 oldPosition;
-  private Quaternion oldRotation;
+  public AnimationCurve rotationCurve = new AnimationCurve();
+  public float curveDuration = 3;
+  [Tooltip("Percentage of angular rotation converted to upwards(local) motion")]
+  public float spinLift = 1;
+  public float maxRotation = 180;
+  public Vector3 testVelocity = new Vector3(1, 0, 0);
 
-  private float attachTime;
+  private bool boomeranging = false;
+  private float prevAngle = 0;
+  private float boomerangStart = 0;
+  private Rigidbody rb;
 
-  private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
-
-  private Interactable interactable;
-
-  //-------------------------------------------------
-  // Called when a Hand starts hovering over this object
-  //-------------------------------------------------
-  private void OnHandHoverBegin(Hand hand) {
-
+  [MyBox.ButtonMethod]
+  public void TestThrow() {
+    rb.velocity = testVelocity;
+    StartBoomeranging();
   }
 
-
-  //-------------------------------------------------
-  // Called when a Hand stops hovering over this object
-  //-------------------------------------------------
-  private void OnHandHoverEnd(Hand hand) {
-
+  private void Start() {
+    rb = GetComponent<Rigidbody>();
   }
-
-
-  //-------------------------------------------------
-  // Called every Update() while a Hand is hovering over this object
-  //-------------------------------------------------
-  private void HandHoverUpdate(Hand hand) {
-    GrabTypes startingGrabType = hand.GetGrabStarting();
-    bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-    if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None) {
-      // Save our position/rotation so that we can restore it when we detach
-      oldPosition = transform.position;
-      oldRotation = transform.rotation;
-
-      // Call this to continue receiving HandHoverUpdate messages,
-      // and prevent the hand from hovering over anything else
-      hand.HoverLock(interactable);
-
-      // Attach this object to the hand
-      hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
-    } else if (isGrabEnding) {
-      // Detach this object from the hand
-      hand.DetachObject(gameObject);
-
-      // Call this to undo HoverLock
-      hand.HoverUnlock(interactable);
-
-      // Restore position/rotation
-      transform.position = oldPosition;
-      transform.rotation = oldRotation;
-    }
-  }
-
 
   //-------------------------------------------------
   // Called when this GameObject becomes attached to the hand
   //-------------------------------------------------
   private void OnAttachedToHand(Hand hand) {
+    StopBoomeranging();
   }
 
 
@@ -76,19 +42,45 @@ public class Boomerang : MonoBehaviour {
   // Called when this GameObject is detached from the hand
   //-------------------------------------------------
   private void OnDetachedFromHand(Hand hand) {
+    StartBoomeranging();
   }
 
+  //-------------------------------------------------
+  // Called when this GameObject is detached from the hand
+  //-------------------------------------------------
+  private void OnCollisionEnter(Collision col) {
+    StopBoomeranging();
+  }
+
+  private void StartBoomeranging() {
+    boomeranging = true;
+    prevAngle = 0;
+    boomerangStart = Time.time;
+  }
+  private void StopBoomeranging() {
+    boomeranging = false;
+    boomerangStart = 0;
+  }
 
   //-------------------------------------------------
   // Called every Update() while this GameObject is attached to the hand
   //-------------------------------------------------
-  private void HandAttachedUpdate(Hand hand) {
-  }
-
-  private bool lastHovering = false;
   private void Update() {
-    if (interactable.isHovering != lastHovering) //save on the .tostrings a bit
-    {
+    if (boomeranging) {
+      rb.AddForce(transform.up * (rb.angularVelocity.y * spinLift));
+
+      var time = Time.time;
+      var fract = (time - boomerangStart) / curveDuration;
+      var angle = rotationCurve.Evaluate(fract) * maxRotation;
+      var angleDiff = angle - prevAngle;
+      prevAngle = angle;
+
+      Quaternion rot = Quaternion.AngleAxis(angleDiff, Vector3.up);
+      rb.velocity = rot * rb.velocity;
+
+      if (fract > 1) {
+        StopBoomeranging();
+      }
     }
   }
 }

@@ -81,4 +81,21 @@ static class ArrayExtensions {
     return false;
   }
 
+
+  /// <summary> Returns a new array which is this array and one or more arrays merged together </summary>
+  public static T[] Concat<T>(this T[] array, params T[][] arrays) {
+    var len = array.Length;
+    for (int i = 0; i < arrays.Length; i++)
+      len += arrays[i].Length;
+
+    var res = new T[array.Length + len];
+
+    array.CopyTo(res, 0);
+    var startI = array.Length;
+    for (int i = 0; i < arrays.Length; i++) {
+      arrays[i].CopyTo(res, startI);
+      startI += arrays[i].Length;
+    }
+    return res as T[];
+  }
 }

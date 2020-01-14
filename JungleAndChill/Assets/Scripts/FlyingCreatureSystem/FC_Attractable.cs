@@ -6,31 +6,43 @@ using MyBox;
 [RequireComponent(typeof(Rigidbody))]
 public class FC_Attractable : MonoBehaviour {
   private Rigidbody rb;
-  [MustBeAssigned]
-  public FC_Attractor att;
+  [Tooltip("The attractor to use. Defaults to closest one")]
+  public FC_Attractor attractor;
   [PositiveValueOnly]
-  public float minStrength = 0.1f;
+  public float farStrength = 0.1f;
   [PositiveValueOnly]
-  public float maxStrength = 1;
-  [Tooltip("Maximum attraction strength is applied at distances lower than this")]
-  public float minDistance = 0.1f;
-  [Tooltip("Minimum attraction strength is applied at distances higher than this")]
-  public float maxDistance = 1;
-  [Tooltip("Velocity added over time to prevent hugging attractor")]
-  public float velocityIncreaseOverTime = 0.1f;
+  public float nearStrength = 1;
+  [Tooltip("Near attraction strength is applied at distances lower than this")]
+  public float nearDistance = 0.1f;
+  [Tooltip("Far attraction strength is applied at distances higher than this")]
+  public float farDistance = 1;
+
   // Start is called before the first frame update
   void Start() {
-    if (rb != null) Debug.LogError("TEST CONCLUDED AND AUTOPROPERTY WORKS");
     rb = GetComponent<Rigidbody>();
+    if (attractor == null) attractor = FindClosestAttractor();
+    if (attractor == null) throw new UnityException("No attractor found in scene!");
+  }
+
+  FC_Attractor FindClosestAttractor() {
+    var minDist = float.PositiveInfinity;
+    FC_Attractor minAtt = null;
+    foreach (var att in GetComponents<FC_Attractor>()) {
+      var dist = Vector3.Distance(transform.position, att.transform.position);
+      if (dist < minDist) {
+        minDist = dist;
+        minAtt = att;
+      }
+    }
+    return minAtt;
   }
 
   // Update is called once per frame
-  void Update() {
-    var dist = Vector3.Distance(att.transform.position, transform.position);
-    dist = Mathf.Clamp(dist, minDistance, maxDistance);
-    var strength = dist.Remap(minDistance, maxDistance, maxStrength, minStrength);
+  void FixedUpdate() {
+    var dist = Vector3.Distance(attractor.transform.position, transform.position);
+    dist = Mathf.Clamp(dist, nearDistance, farDistance);
+    var strength = dist.Remap(nearDistance, farDistance, nearStrength, farStrength);
 
-    rb.AddForce((att.transform.position - transform.position).SetLenSafe(strength));
-    rb.velocity = rb.velocity * velocityIncreaseOverTime;
+    rb.AddForce((attractor.transform.position - transform.position).SetLenSafe(strength) * Time.deltaTime);
   }
 }

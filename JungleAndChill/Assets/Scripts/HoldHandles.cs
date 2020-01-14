@@ -9,15 +9,18 @@ public class HoldHandles : MonoBehaviour {
   public float angleWeight = 1;
 
   private Transform[] handles;
+  private Interactable inter;
+  private bool attached = false;
 
   private void Start() {
-    var inter = GetComponent<Interactable>();
+    inter = GetComponent<Interactable>();
     inter.onAttachedToHand += OnAttachedToHand;
     var handleGos = GetComponentsInChildren<Handle>();
     handles = handleGos.Map((v) => v.transform);
   }
 
   private void OnAttachedToHand(Hand hand) {
+    if (attached) return;
     var handPos = hand.transform.position;
 
     // Find closest pos
@@ -35,13 +38,21 @@ public class HoldHandles : MonoBehaviour {
     }
     // Move to selected position
     if (selected != null) {
+      var flags = hand.currentAttachedObjectInfo.Value.attachmentFlags;
+      var grabType = hand.currentAttachedObjectInfo.Value.grabbedWithType;
+
+      attached = true;
+      hand.DetachObject(gameObject);
       // Set angle so that handle matches the hand angle
       var rot = hand.transform.rotation.eulerAngles - selected.transform.rotation.eulerAngles;
-      transform.Rotate(rot);
+      transform.Rotate(-rot);
 
       // Set position so that handle matches the hand position
-      var move = hand.transform.position - selected.transform.position;
+      var move = handPos - selected.transform.position;
       transform.Translate(move);
+
+      hand.AttachObject(gameObject, grabType, flags);
+      attached = false;
     }
   }
 }

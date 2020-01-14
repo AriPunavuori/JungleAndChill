@@ -5,7 +5,6 @@ using MyBox;
 
 [RequireComponent(typeof(Rigidbody))]
 public class FC_Attractable : MonoBehaviour {
-  [AutoProperty]
   private Rigidbody rb;
   [MustBeAssigned]
   public FC_Attractor att;

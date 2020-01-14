@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FC_RestingSpot : MonoBehaviour {
-  // Start is called before the first frame update
-  void Start() {
-
-  }
+  public Vector3 offset;
+  public Vector3 rotation;
 
   // Update is called once per frame
   void Update() {
@@ -14,6 +12,8 @@ public class FC_RestingSpot : MonoBehaviour {
   }
 
   void OnDrawGizmosSelected() {
-    Gizmos.DrawCube(transform.position, new Vector3(0.1f, -0.01f, 0.1f));
+    Gizmos.color = Color.cyan;
+    Gizmos.DrawSphere(transform.position, 0.02f);
+    DrawArrow.Gizmo(transform.position, transform.forward * 0.333f, Color.magenta, 0.1f);
   }
 }

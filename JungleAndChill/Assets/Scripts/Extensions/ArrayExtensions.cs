@@ -25,46 +25,60 @@ static class ArrayExtensions {
   public static void Reverse<T>(this T[] array, int index, int length) => System.Array.Reverse(array, index, length);
   public static void Reverse<T>(this T[] array) => System.Array.Reverse(array);
 
-  public delegate R MapCallback1<R, T>(T current);
-  public delegate R MapCallback2<R, T>(T current, int index);
-  public delegate R MapCallback3<R, T>(T current, int index, T[] array);
+  public delegate R MapFunc1<R, T>(T current);
+  public delegate R MapFunc2<R, T>(T current, int index);
+  public delegate R MapFunc3<R, T>(T current, int index, T[] array);
 
-  /// <summary> Returns the resulting array if func is ran on each element </summary>
-  public static R[] Map<T, R>(this T[] array, MapCallback1<R, T> callback) {
+  /// <summary> Returns the resulting array if `Func` is ran on each element </summary>
+  public static R[] Map<T, R>(this T[] array, MapFunc1<R, T> func) {
     R[] res = new R[array.Length];
     for (int i = 0; i < array.Length; i++) {
-      res[i] = callback(array[i]);
+      res[i] = func(array[i]);
     }
     return res;
   }
-  /// <summary> Returns the resulting array if func is ran on each element </summary>
-  public static R[] Map<T, R>(this T[] array, MapCallback2<R, T> callback) {
+  /// <summary> Returns the resulting array if `Func` is ran on each element </summary>
+  public static R[] Map<T, R>(this T[] array, MapFunc2<R, T> func) {
     R[] res = new R[array.Length];
     for (int i = 0; i < array.Length; i++) {
-      res[i] = callback(array[i], i);
+      res[i] = func(array[i], i);
     }
     return res;
   }
-  /// <summary> Returns the resulting array if func is ran on each element </summary>
-  public static R[] Map<T, R>(this T[] array, MapCallback3<R, T> callback) {
+  /// <summary> Returns the resulting array if `Func` is ran on each element </summary>
+  public static R[] Map<T, R>(this T[] array, MapFunc3<R, T> func) {
     R[] res = new R[array.Length];
     for (int i = 0; i < array.Length; i++) {
-      res[i] = callback(array[i], i, array);
+      res[i] = func(array[i], i, array);
     }
     return res;
   }
-  /*
-  
-callback
-  Function that produces an element of the new Array, taking three arguments:
-currentValue
-  The current element being processed in the array.
-indexOptional
-  The index of the current element being processed in the array.
-arrayOptional
-  The array map was called upon.
-thisArgOptional
-  Value to use as this when executing callback.
-*/
+
+
+  public delegate bool AnyFunc1<R, T>(T current);
+  public delegate bool AnyFunc2<R, T>(T current, int index);
+  public delegate bool AnyFunc3<R, T>(T current, int index, T[] array);
+
+  /// <summary> Returns true if `Func` returns true for any array element </summary>
+  public static bool Any<T, R>(this T[] array, AnyFunc1<R, T> func) {
+    for (int i = 0; i < array.Length; i++) {
+      if (func(array[i])) return true;
+    }
+    return false;
+  }
+  /// <summary> Returns true if `Func` returns true for any array element </summary>
+  public static bool Any<T, R>(this T[] array, AnyFunc2<R, T> func) {
+    for (int i = 0; i < array.Length; i++) {
+      if (func(array[i], i)) return true;
+    }
+    return false;
+  }
+  /// <summary> Returns true if `Func` returns true for any array element </summary>
+  public static bool Any<T, R>(this T[] array, AnyFunc3<R, T> func) {
+    for (int i = 0; i < array.Length; i++) {
+      if (func(array[i], i, array)) return true;
+    }
+    return false;
+  }
 
 }

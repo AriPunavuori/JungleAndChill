@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1164127859
+--- !u!21 &1004130276
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -556,7 +556,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1626570810
+--- !u!1 &1691726612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6988691897946827096, guid: c36162b07cc53944d957909751f44889,
+    type: 3}
+  m_PrefabInstance: {fileID: 6988691896257272396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &1734461994
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,12 +725,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1691726612 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6988691897946827096, guid: c36162b07cc53944d957909751f44889,
-    type: 3}
-  m_PrefabInstance: {fileID: 6988691896257272396}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869144946
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,12 +970,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1164127859}
+      objectReference: {fileID: 1004130276}
     - target: {fileID: 6988691897949930106, guid: c36162b07cc53944d957909751f44889,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1626570810}
+      objectReference: {fileID: 1734461994}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36162b07cc53944d957909751f44889, type: 3}
 --- !u!1001 &7790176623022357192

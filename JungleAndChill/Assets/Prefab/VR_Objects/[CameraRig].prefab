@@ -291,7 +291,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 512
-  moveSpeed: 10
+  moveSpeed: 0.02
   RightHand: {fileID: 6988691896829829027}
   LeftHand: {fileID: 6988691896369014722}
   ToggleGripButton:

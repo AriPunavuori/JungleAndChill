@@ -4,9 +4,11 @@ using Valve.VR;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Climber : MonoBehaviour {
-    LayerMask mask;
+    public LayerMask mask;
+    public float moveSpeed;
     Rigidbody rb;
-    float rayLength = 0.1f;
+    GameObject player;
+    float rayLength = 0.5f;
     public ClimberHand RightHand;
     public ClimberHand LeftHand;
     public SteamVR_Action_Boolean ToggleGripButton;
@@ -15,7 +17,7 @@ public class Climber : MonoBehaviour {
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
-        mask = LayerMask.NameToLayer("Floor");
+        player = GameObject.Find("Player");
     }
     bool IsClimbing() {
         return grabbedHands.Count > 0;
@@ -29,16 +31,25 @@ public class Climber : MonoBehaviour {
         UpdateHand(LeftHand);
         if(IsClimbing()) {
             ClimberHandle.targetPosition = -ActiveHand().transform.localPosition;//update collider for hand movment
-        } else if(Physics.Raycast(transform.position, Vector3.down, rayLength, mask)) {
+        } 
+    }
+
+    private void FixedUpdate() {
+        if (Physics.Raycast(transform.position + Vector3.up * rayLength, Vector3.down, rayLength, mask)) { //If raycast hits ground disable gravity
+            //print("Hit ground");
             rb.useGravity = false;
+            rb.velocity = Vector3.zero;
         } else {
             rb.useGravity = true;
         }
+        var targetPos = Vector3.up * transform.position.y; 
+        rb.MovePosition(Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime));
+        //Debug.DrawLine(transform.position + Vector3.up * rayLength, transform.position + Vector3.down * rayLength, Color.blue);
     }
 
     void UpdateHand(ClimberHand hand) {
         if (grabbedHands.Contains(hand)) {
-            if (ToggleGripButton.GetStateUp(hand.hand)) {
+            if (ToggleGripButton.GetStateUp(hand.hand)) { //Remove connection to ClimberHandle and return gravity
                 grabbedHands.Remove(hand);
                 if (!IsClimbing()) {
                     rb.useGravity = true;
@@ -46,7 +57,7 @@ public class Climber : MonoBehaviour {
                 }
             }
         } else {
-            if (hand.touchedCount > 0 && ToggleGripButton.GetStateDown(hand.hand)) {
+            if (hand.touchedCount > 0 && ToggleGripButton.GetStateDown(hand.hand)) { //Attach this rigidbody to ClimberHandle and remove gravity
                 grabbedHands.Insert(0, hand);
                 print("adding hand " + hand.name + " to list idx 0");
                 ClimberHandle.transform.position = hand.transform.position;
@@ -55,4 +66,5 @@ public class Climber : MonoBehaviour {
             }
         }
     }
+
 }

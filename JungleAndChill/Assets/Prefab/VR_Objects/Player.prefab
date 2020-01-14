@@ -57,7 +57,7 @@ MonoBehaviour:
   audioListener: {fileID: 0}
   headsetOnHead:
     actionPath: /actions/default/in/HeadsetOnHead
-    needsReinit: 0
+    needsReinit: 1
   allowToggleTo2D: 1
 --- !u!1 &7790176622221080745
 GameObject:

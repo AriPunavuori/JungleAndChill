@@ -70,7 +70,10 @@ public class Boomerang : MonoBehaviour {
         rb.AddForce(transform.up * (Mathf.Min(rb.angularVelocity.y * spinLift, maxLift)));
       }
 
-      var fract = (Time.time - boomerangStart) / curveDuration;
+      if (curveDuration == -1) {
+        curveDuration = rb.velocity.magnitude * velocityToDuration;
+      }
+      var fract = (Time.time - boomerangStart) / (curveDuration == 0 ? -1 : curveDuration);
       var rot = rotationCurve.Evaluate(fract) * maxRotation;
       var rotDiff = rot - prevRot;
       prevRot = rot;

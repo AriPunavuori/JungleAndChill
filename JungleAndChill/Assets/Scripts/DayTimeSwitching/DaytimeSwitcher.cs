@@ -28,7 +28,7 @@ public class DaytimeSwitcher : MonoBehaviour {
     public void SwitchDaytime() {
         if(dn == dayNite.Day)
             dn = dayNite.DayToNight;
-        else
+        if (dn == dayNite.Night)
             dn = dayNite.NightToDay;
     }
 }

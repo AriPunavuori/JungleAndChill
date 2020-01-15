@@ -8,7 +8,7 @@ public class TargetVelocity : MonoBehaviour {
   [Tooltip("Aproach this velocity")]
   public float targetVelocity = 1;
   [Tooltip("Multiply time.deltaTime with this value. Will increase speed of reaching target velocity")]
-  public float deltaMultiplier = 1;
+  public float strength = 1;
 
   private Rigidbody rb;
 
@@ -20,7 +20,7 @@ public class TargetVelocity : MonoBehaviour {
   // Update is called once per frame
   void FixedUpdate() {
     var mag = rb.velocity.magnitude;
-    var mult = Mathf.Lerp(mag, targetVelocity, Time.deltaTime * deltaMultiplier);
+    var mult = Mathf.Lerp(mag, targetVelocity, 1 - Mathf.Pow(1 - Time.deltaTime, strength));
     rb.velocity = rb.velocity.SetLenSafe(mult);
   }
 }

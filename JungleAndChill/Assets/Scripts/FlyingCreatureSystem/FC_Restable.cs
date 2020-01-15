@@ -7,8 +7,6 @@ public class FC_Restable : MonoBehaviour {
 
   [Tooltip("The resting points to use. If none are assigned find them in scene")]
   public FC_RestingSpot[] spots;
-  [Tooltip("How much to force rb velocity direction towards closest resting point")]
-  public float maxDirectionStrength = 1;
   [Tooltip("Dont do nuffin before this duration")]
   public float minDuration = 10;
   [Tooltip("Max strength is reached at this point and duration resets to 0!")]
@@ -17,43 +15,48 @@ public class FC_Restable : MonoBehaviour {
   public float restDistance = 0.1f;
   [Tooltip("When resting, have this chance of unresting (per second on average)")]
   public float unrestChance = 0.25f;
+  [Tooltip("Strength of deltaTime when applying rotation")]
+  public float maxDirectionStrength = 1;
+  [Tooltip("Additional strength added to TargetVeloity component")]
+  public float maxTVDeltaMultInc;
 
   private Rigidbody rb;
   private FC_Attractable atbl;
   private TargetVelocity tv;
+  private float origStrength;
   private float unrestTime;
   private TransformData prevTrans;
-  private Transform prevParent;
+  private Transform mainParent;
   private bool resting = false;
-
 
   public void StartResting(Transform t) {
     resting = true;
     if (atbl != null) atbl.enabled = false;
     if (tv != null) tv.enabled = false;
-    prevTrans = transform.Save();
-    prevParent = transform.parent;
     transform.parent = t;
-    transform.position = t.position;
-    transform.rotation = t.rotation;
+    rb.MovePosition(t.position);
+    rb.MoveRotation(t.rotation);
+    rb.velocity = Vector3.zero;
+    rb.angularVelocity = Vector3.zero;
   }
 
   public void StopResting() {
     resting = false;
     if (atbl != null) atbl.enabled = true;
     if (tv != null) tv.enabled = true;
-    transform.Load(prevTrans);
-    transform.parent = prevParent;
+    transform.parent = mainParent;
     unrestTime = Time.time;
   }
 
 
   // Start is called before the first frame update
   void Start() {
+    mainParent = transform.parent;
     unrestTime = Time.time;
     rb = GetComponent<Rigidbody>();
     atbl = GetComponent<FC_Attractable>();
     tv = GetComponent<TargetVelocity>();
+    if (tv != null) origStrength = tv.strength;
     if (spots.Length == 0) {
       spots = GameObject.FindObjectsOfType<FC_RestingSpot>();
     }
@@ -87,10 +90,16 @@ public class FC_Restable : MonoBehaviour {
     var closest = FindClosestSpot(out var dist);
     if (closest == null) return;
     var fract = (Time.time - (unrestTime + minDuration)) / (wantDuration + minDuration);
-    if (fract < 0) return;
-    var strength = fract * maxDirectionStrength;
+    if (fract < 0) {
+      tv.strength = origStrength;
+      return;
+    }
+    if (tv != null) tv.strength = origStrength + fract * maxTVDeltaMultInc;
+
+    var dirStrength = fract * maxDirectionStrength;
     if (fract >= 1) unrestTime = Time.time;
-    rb.velocity = rb.velocity * (1 - maxDirectionStrength) + rb.velocity.SetDirSafe(closest.transform.position - transform.position) * maxDirectionStrength;
+    var dir = closest.transform.position - transform.position;
+    rb.velocity = Vector3.RotateTowards(rb.velocity, dir, 1 - Mathf.Pow(1 - Time.deltaTime, dirStrength), 0);
 
     if (dist < restDistance)
       StartResting(closest.transform);

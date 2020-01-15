@@ -76,7 +76,8 @@ public class Boomerang : MonoBehaviour {
       prevRot = rot;
 
       Quaternion qtRot = Quaternion.AngleAxis(rotDiff, transform.up);
-      rb.velocity = qtRot * rb.velocity;
+      if (!rb.velocity.Equals(Vector3.zero))
+        rb.velocity = qtRot * rb.velocity;
 
       if (fract > 1) {
         StopBoomeranging();

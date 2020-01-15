@@ -6,12 +6,6 @@ using MyBox;
 [RequireComponent(typeof(Rigidbody))]
 public class FC_Attractor : MonoBehaviour {
 
-  public FC_RestingSpot[] restingSpots;
-  public bool resting = false;
-
-  [Tooltip("If the resting object has a velocity bigger than this unrest")]
-  public float unrestVelocity = 0.1f;
-
   [Tooltip("Spooky objects")]
   public SpookyObject[] spooks;
 

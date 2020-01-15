@@ -8,8 +8,10 @@ using Valve.VR.InteractionSystem;
 [RequireComponent(typeof(Throwable))]
 public class Boomerang : MonoBehaviour {
   public AnimationCurve rotationCurve = new AnimationCurve();
-  public float curveDuration = 3;
-  [Tooltip("Percentage of angular rotation converted to upwards(local) motion")]
+
+  public float velocityToDuration = 1;
+
+  [Tooltip("Percentage of angular rotation converted to upwards(local) motion. Wonky and hard to configure and use with gravity on")]
   public bool disableGravity = false;
   [MyBox.ConditionalField(nameof(disableGravity), true)]
   public float spinLift = 1;
@@ -18,8 +20,9 @@ public class Boomerang : MonoBehaviour {
   public float maxRotation = 240;
   public Vector3 testVelocity = new Vector3(1, 0, 0);
 
+  private float curveDuration;
   private bool boomeranging = false;
-  private float prevAngle = 0;
+  private float prevRot = 0;
   private float boomerangStart = 0;
   private Rigidbody rb;
 
@@ -46,8 +49,9 @@ public class Boomerang : MonoBehaviour {
   private void StartBoomeranging(Hand hand = default(Hand)) {
     if (disableGravity)
       rb.useGravity = false;
+    curveDuration = rb.velocity.magnitude * velocityToDuration;
     boomeranging = true;
-    prevAngle = 0;
+    prevRot = 0;
     boomerangStart = Time.time;
   }
   private void StopBoomeranging(Hand hand = default(Hand)) {
@@ -67,12 +71,12 @@ public class Boomerang : MonoBehaviour {
       }
 
       var fract = (Time.time - boomerangStart) / curveDuration;
-      var angle = rotationCurve.Evaluate(fract) * maxRotation;
-      var angleDiff = angle - prevAngle;
-      prevAngle = angle;
+      var rot = rotationCurve.Evaluate(fract) * maxRotation;
+      var rotDiff = rot - prevRot;
+      prevRot = rot;
 
-      Quaternion rot = Quaternion.AngleAxis(angleDiff, transform.up);
-      rb.velocity = rot * rb.velocity;
+      Quaternion qtRot = Quaternion.AngleAxis(rotDiff, transform.up);
+      rb.velocity = qtRot * rb.velocity;
 
       if (fract > 1) {
         StopBoomeranging();

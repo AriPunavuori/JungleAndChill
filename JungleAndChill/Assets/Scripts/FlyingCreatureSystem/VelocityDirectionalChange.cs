@@ -18,12 +18,16 @@ public class VelocityDirectionalChange : MonoBehaviour {
   // Start is called before the first frame update
   void Start() {
     rb = GetComponent<Rigidbody>();
+    rotation = new Vector3(Random.Range(-rotationJitter, rotationJitter), Random.Range(-rotationJitter, rotationJitter), Random.Range(-rotationJitter, rotationJitter));
+    // Prevent synchronization with others sharing same values
+    lastRotationChange = Time.time - Random.Range(0, rotationInterval);
   }
 
   // Update is called once per frame
   void FixedUpdate() {
     if (lastRotationChange < Time.time - rotationInterval) {
       rotation = new Vector3(Random.Range(-rotationJitter, rotationJitter), Random.Range(-rotationJitter, rotationJitter), Random.Range(-rotationJitter, rotationJitter));
+      lastRotationChange = Time.time;
     }
     var deltaRotation = Quaternion.Euler(rotation.x * Time.deltaTime, rotation.y * Time.deltaTime, rotation.z * Time.deltaTime);
     rb.velocity = deltaRotation * rb.velocity;

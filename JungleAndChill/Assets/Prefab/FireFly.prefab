@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5234192378283402638}
   - component: {fileID: 1857133821201680639}
   - component: {fileID: 1625211626}
+  - component: {fileID: 668075530}
   m_Layer: 10
   m_Name: FireFly
   m_TagString: Untagged
@@ -32,8 +33,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234192378283402647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8604379, y: -3.85, z: 0.5441148}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -200,9 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractor: {fileID: 0}
-  farStrength: 10
+  farStrength: 200
   nearStrength: 25
-  nearDistance: 1
+  nearDistance: 1.5
   farDistance: 2
 --- !u!114 &1857133821201680639
 MonoBehaviour:
@@ -232,3 +233,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetVelocity: 0.5
   deltaMultiplier: 1
+--- !u!114 &668075530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234192378283402647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b351891cb89c104b8c6ce23b8217278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spots: []
+  maxDirectionStrength: 1
+  minDuration: 10
+  wantDuration: 30
+  restDistance: 0.1
+  unrestChance: 0.25

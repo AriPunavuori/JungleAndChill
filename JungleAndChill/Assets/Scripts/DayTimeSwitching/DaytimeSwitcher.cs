@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DaytimeSwitcher : MonoBehaviour {
     public enum dayNite { Day, Night, DayToNight, NightToDay };
-    dayNite dn;
+    public dayNite dn;
     public float Daylight;
     public float switchTime = 5;
 
@@ -25,16 +25,10 @@ public class DaytimeSwitcher : MonoBehaviour {
         }
     }
 
-    void SwitchDaytime() {
+    public void SwitchDaytime() {
         if(dn == dayNite.Day)
             dn = dayNite.DayToNight;
         else
             dn = dayNite.NightToDay;
     }
-    private void OnTriggerExit(Collider other) {
-        if(other.CompareTag("DaytimeSwitcher")) {
-            SwitchDaytime();
-        }
-    }
-
 }

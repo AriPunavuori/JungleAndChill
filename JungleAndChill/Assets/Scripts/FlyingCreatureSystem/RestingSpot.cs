@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FC_RestingSpot : MonoBehaviour {
+public class RestingSpot : MonoBehaviour {
   void OnDrawGizmosSelected() {
     Gizmos.color = Color.cyan;
     Gizmos.DrawSphere(transform.position, 0.02f);

@@ -6,23 +6,6 @@ using MyBox;
 [RequireComponent(typeof(Rigidbody))]
 public class FC_Attractor : MonoBehaviour {
 
-  [Tooltip("Spooky objects")]
-  public SpookyObject[] spooks;
-
-  [System.Serializable]
-  public struct SpookyObject {
-    public Transform transform;
-    [Tooltip("Add this much of a spooks velocity to own velocity (depends on distance values)")]
-    public float spookiness;
-  }
-
-  [Tooltip("Avoid spooks which reach this velocity (fixed delta scaled distance from old position)")]
-  public float spookVelocity = 0.2f;
-  [Tooltip("Full spookiness below this distance")]
-  public float minSpookyDist = 0.2f;
-  [Tooltip("No spookiness above this distance")]
-  public float maxSpookyDist = 1f;
-
   [Tooltip("Automatically search for bounds in children of parent")]
   public bool FindBoundsInSiblings = true;
   [Tooltip("Manually find bounding boxes in children of parent")]
@@ -35,13 +18,13 @@ public class FC_Attractor : MonoBehaviour {
 
 
   private Rigidbody rb;
-  private Vector3[] oldPositions;
   private Vector3 prevInbounds;
+
+
 
   // Start is called before the first frame update
   void Start() {
     rb = GetComponent<Rigidbody>();
-    oldPositions = spooks.Map(s => s.transform.position);
     prevInbounds = transform.position;
     if (FindBoundsInSiblings) {
       var foundBoxes = transform.parent.GetComponentsInChildren<FC_BoundingBox>();
@@ -54,7 +37,6 @@ public class FC_Attractor : MonoBehaviour {
 
   // Update is called once per frame
   void FixedUpdate() {
-    CheckSpooks();
     UpdateVelocity();
     ApplyBounds();
   }
@@ -86,29 +68,4 @@ public class FC_Attractor : MonoBehaviour {
     return false;
   }
 
-  void CheckSpooks() {
-    for (int i = 0; i < spooks.Length; i++) {
-      var distance = Vector3.Distance(spooks[i].transform.position, transform.position);
-      if (distance > maxSpookyDist) continue;
-
-      var oldPos = oldPositions[i];
-      oldPositions[i] = spooks[i].transform.position;
-      var velocity = (spooks[i].transform.position - oldPos) / Time.deltaTime;
-      var speed = velocity.magnitude;
-      if (speed >= spookVelocity) {
-        if (distance < minSpookyDist) {
-          rb.AddForce(velocity * spooks[i].spookiness);
-          continue;
-        }
-        var spookiness = distance.Remap(minSpookyDist, maxSpookyDist, spooks[i].spookiness, 0);
-        rb.AddForce(velocity * spookiness);
-
-      }
-    }
-  }
-
-  void GetSpooked(Vector3 sourceOldPos, Vector3 sourceNewPos, float spookiness) {
-    var vel = (sourceOldPos - sourceNewPos) * spookiness;
-    rb.AddForce(vel);
-  }
 }

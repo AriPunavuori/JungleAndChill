@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1857133821201680639}
   - component: {fileID: 1625211626}
   - component: {fileID: 668075530}
+  - component: {fileID: -3087207521856266779}
   m_Layer: 10
   m_Name: FireFly
   m_TagString: Untagged
@@ -252,3 +253,29 @@ MonoBehaviour:
   unrestChance: 0.05
   maxDirectionStrength: 5
   maxTVDeltaMultInc: 5
+  disables:
+    addGameObject: {fileID: 0}
+    addBehaviour: {fileID: 0}
+    addRenderer: {fileID: 0}
+    objects:
+    - {fileID: 5234192378283402638}
+    - {fileID: 1857133821201680639}
+    - {fileID: 1625211626}
+    - {fileID: 5234192378283402640}
+--- !u!114 &-3087207521856266779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234192378283402647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3a4e9a2cf45dd498e65cfd915aeeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spookVelocity: 0.2
+  minSpookyDist: 0.2
+  maxSpookyDist: 1
+  maxSpookiness: 0
+  spooks: []

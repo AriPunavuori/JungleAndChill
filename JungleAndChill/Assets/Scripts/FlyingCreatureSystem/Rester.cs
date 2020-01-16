@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class FC_Restable : MonoBehaviour {
+public class Rester : MonoBehaviour {
 
   [Tooltip("The resting points to use. If none are assigned find them in scene")]
-  public FC_RestingSpot[] spots;
+  public RestingSpot[] spots;
   [Tooltip("Dont do nuffin before this duration")]
   public float minDuration = 10;
   [Tooltip("Max strength is reached at this point and duration resets to 0!")]
@@ -17,11 +17,12 @@ public class FC_Restable : MonoBehaviour {
   public float unrestChance = 0.25f;
   [Tooltip("Strength of deltaTime when applying rotation")]
   public float maxDirectionStrength = 1;
-  [Tooltip("Additional strength added to TargetVeloity component")]
+  [Tooltip("Additional strength added to TargetVelocity component")]
   public float maxTVDeltaMultInc;
+  [Tooltip("Disable these things when resting")]
+  public Disabler disables;
 
   private Rigidbody rb;
-  private FC_Attractable atbl;
   private TargetVelocity tv;
   private float origStrength;
   private float unrestTime;
@@ -30,8 +31,8 @@ public class FC_Restable : MonoBehaviour {
   private bool resting = false;
 
   public void StartResting(Transform t) {
+    if (resting) return;
     resting = true;
-    if (atbl != null) atbl.enabled = false;
     if (tv != null) tv.enabled = false;
     transform.parent = t;
     rb.MovePosition(t.position);
@@ -41,8 +42,8 @@ public class FC_Restable : MonoBehaviour {
   }
 
   public void StopResting() {
+    if (!resting) return;
     resting = false;
-    if (atbl != null) atbl.enabled = true;
     if (tv != null) tv.enabled = true;
     transform.parent = mainParent;
     unrestTime = Time.time;
@@ -54,17 +55,16 @@ public class FC_Restable : MonoBehaviour {
     mainParent = transform.parent;
     unrestTime = Time.time;
     rb = GetComponent<Rigidbody>();
-    atbl = GetComponent<FC_Attractable>();
     tv = GetComponent<TargetVelocity>();
     if (tv != null) origStrength = tv.strength;
     if (spots.Length == 0) {
-      spots = GameObject.FindObjectsOfType<FC_RestingSpot>();
+      spots = GameObject.FindObjectsOfType<RestingSpot>();
     }
   }
 
-  FC_RestingSpot FindClosestSpot(out float distance) {
+  RestingSpot FindClosestSpot(out float distance) {
     distance = float.PositiveInfinity;
-    FC_RestingSpot minAtt = null;
+    RestingSpot minAtt = null;
     foreach (var spot in spots) {
       var dist = Vector3.Distance(transform.position, spot.transform.position);
       if (dist < distance) {

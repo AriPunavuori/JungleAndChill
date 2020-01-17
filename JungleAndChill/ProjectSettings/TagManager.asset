@@ -6,9 +6,9 @@ TagManager:
   tags:
   - Climbable
   - DaytimeSwitcher
-  - 1stVineObject
-  - 2ndVineObject
-  - 3rdVineObject
+  - FirstVineObject
+  - SecondVineObject
+  - ThirdVineObject
   layers:
   - Default
   - TransparentFX

@@ -271,6 +271,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 38.388, y: 112.006004, z: 2.562}
+--- !u!21 &335493395
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!153 &368221859 stripped
 ConfigurableJoint:
   m_CorrespondingSourceObject: {fileID: 5551486469914102709, guid: e43ed93ec52069d4cbc5e06ba7bcf7f8,
@@ -999,7 +1033,7 @@ GameObject:
   - component: {fileID: 634718198}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: 3rdVineObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,7 +1126,7 @@ GameObject:
   - component: {fileID: 655358441}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: 1stVineObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1171,41 +1205,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &983025000
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!43 &1412339664
+--- !u!43 &1427654704
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1473,6 +1473,7 @@ GameObject:
   - component: {fileID: 1669236057}
   - component: {fileID: 1669236056}
   - component: {fileID: 1669236055}
+  - component: {fileID: 1669236059}
   m_Layer: 0
   m_Name: VineDropper
   m_TagString: Untagged
@@ -1554,6 +1555,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669236059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669236054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78340399e42fdc146bf0b483f303fa80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1691726612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6988691897946827096, guid: c36162b07cc53944d957909751f44889,
@@ -1574,7 +1587,7 @@ GameObject:
   - component: {fileID: 1696760329}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: 2ndVineObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1991,12 +2004,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 983025000}
+      objectReference: {fileID: 335493395}
     - target: {fileID: 6988691897949930106, guid: c36162b07cc53944d957909751f44889,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1412339664}
+      objectReference: {fileID: 1427654704}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c36162b07cc53944d957909751f44889, type: 3}
 --- !u!1001 &7790176623022357192

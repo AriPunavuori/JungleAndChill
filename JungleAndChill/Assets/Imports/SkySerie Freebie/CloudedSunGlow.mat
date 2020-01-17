@@ -123,6 +123,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - DayColor: {r: 0, g: 554.16473, b: 766.9961, a: 0}
+    - NightColor: {r: 0, g: 0.06147003, b: 4, a: 0}
     - Source: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

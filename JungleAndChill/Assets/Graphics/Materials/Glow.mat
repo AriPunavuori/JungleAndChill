@@ -7,35 +7,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SkyDome
-  m_Shader: {fileID: -6465566751694194690, guid: 9f207f75acfa06443b90317d3718179a,
-    type: 3}
+  m_Name: Glow
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Day:
-        m_Texture: {fileID: 2800000, guid: 67b3ca8731053864b8eb5c606f74eb33, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Night:
-        m_Texture: {fileID: 2800000, guid: 740f96d568f4f3e40b049c40f11603e5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_508A98A8:
-        m_Texture: {fileID: 2800000, guid: 67b3ca8731053864b8eb5c606f74eb33, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_F82E1B9A:
-        m_Texture: {fileID: 2800000, guid: 92de9fbb5fd25fe40a72ae7751d83b52, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -65,12 +49,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Boolean_70EB97A0: 1
-    - DayActive: 1
-    - DayOuter: 0
-    - Fraction: 0.48
-    - NoiseOffset: 0
-    - Vector1_E4F462BC: 0.58
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -93,16 +71,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Center: {r: 0.55, g: 0.55, b: 0, a: 0}
-    - DayColor: {r: 0, g: 0.9582106, b: 1.335078, a: 0}
-    - NightColor: {r: 0, g: 0.06147003, b: 4, a: 0}
-    - Source: {r: 0.25641376, g: 0.76303864, b: 0, a: 0}
-    - Vector2_4613D2BF: {r: 0.67, g: 0.63, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &1399797765782458446
+--- !u!114 &8208059719240464222
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

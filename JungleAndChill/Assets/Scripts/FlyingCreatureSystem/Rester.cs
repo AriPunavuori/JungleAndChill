@@ -32,6 +32,7 @@ public class Rester : MonoBehaviour {
 
   public void StartResting(Transform t) {
     if (resting) return;
+    disables.DisableComponents();
     resting = true;
     if (tv != null) tv.enabled = false;
     transform.parent = t;
@@ -43,6 +44,7 @@ public class Rester : MonoBehaviour {
 
   public void StopResting() {
     if (!resting) return;
+    disables.EnableComponents();
     resting = false;
     if (tv != null) tv.enabled = true;
     transform.parent = mainParent;

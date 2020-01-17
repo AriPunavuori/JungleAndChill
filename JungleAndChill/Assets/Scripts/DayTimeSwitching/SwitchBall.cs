@@ -18,7 +18,7 @@ public class SwitchBall : MonoBehaviour {
   public Transform raySource;
 
   private void Start() {
-    ds = GameObject.Find("DaytimeSwitcher").GetComponent<DaytimeSwitcher>();
+    ds = GameObject.FindObjectOfType<DaytimeSwitcher>();
     returnTime = ds.switchTime;
     returnPoint = transform.position;
     rb = GetComponent<Rigidbody>();

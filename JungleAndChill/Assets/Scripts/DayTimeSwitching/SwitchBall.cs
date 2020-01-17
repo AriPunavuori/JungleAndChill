@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class SwitchBall : MonoBehaviour {
   Vector3 returnPoint;
@@ -17,10 +18,13 @@ public class SwitchBall : MonoBehaviour {
   public Transform raySource;
 
   private void Start() {
-    ds = GameObject.Find("DaytimeSwitcher").GetComponent<DaytimeSwitcher>();
+    ds = GameObject.FindObjectOfType<DaytimeSwitcher>();
     returnTime = ds.switchTime;
     returnPoint = transform.position;
     rb = GetComponent<Rigidbody>();
+
+    var inter = GetComponent<Interactable>();
+    inter.onDetachedFromHand += BallThrown;
   }
 
   private void Update() {
@@ -40,7 +44,7 @@ public class SwitchBall : MonoBehaviour {
     }
   }
 
-  public void BallThrown() {
+  public void BallThrown(Hand hand) {
     throwPoint = transform.position;
     ballThrown = true;
   }

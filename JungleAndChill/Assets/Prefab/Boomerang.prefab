@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5560288339236292378}
   - component: {fileID: 5560288339236292383}
   - component: {fileID: 5560288339236292384}
+  - component: {fileID: 189962123}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -333,12 +334,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  curveDuration: 3
-  disableGravity: 0
-  spinLift: 1.5
-  maxLift: 1
+  velocityToDuration: 1
+  disableGravity: 1
+  spinLift: 66
+  maxLift: 28
   maxRotation: 240
-  testVelocity: {x: 5, y: 0, z: 0.1}
+  testVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &189962123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560288339236292385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac3dd3ed9c89564fbbc41c1a6048323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleWeight: 1
 --- !u!1 &5639476165701430728
 GameObject:
   m_ObjectHideFlags: 0

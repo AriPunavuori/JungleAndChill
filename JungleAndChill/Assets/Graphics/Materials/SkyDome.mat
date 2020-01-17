@@ -20,6 +20,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Day:
+        m_Texture: {fileID: 2800000, guid: 67b3ca8731053864b8eb5c606f74eb33, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Night:
+        m_Texture: {fileID: 2800000, guid: 740f96d568f4f3e40b049c40f11603e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_508A98A8:
         m_Texture: {fileID: 2800000, guid: 67b3ca8731053864b8eb5c606f74eb33, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -58,7 +66,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_70EB97A0: 1
-    - Vector1_E4F462BC: 0.57
+    - DayActive: 1
+    - DayOuter: 1
+    - Fraction: 1
+    - NoiseOffset: 0
+    - Vector1_E4F462BC: 0.58
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -81,7 +93,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Vector2_4613D2BF: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Center: {r: 0.55, g: 0.55, b: 0, a: 0}
+    - Vector2_4613D2BF: {r: 0.67, g: 0.63, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallReturn : MonoBehaviour{
+public class SwitchBall : MonoBehaviour{
     Vector3 returnPoint;
     Vector3 throwPoint;
     DaytimeSwitcher ds;

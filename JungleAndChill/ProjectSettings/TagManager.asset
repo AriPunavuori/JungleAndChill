@@ -9,6 +9,7 @@ TagManager:
   - FirstVineObject
   - SecondVineObject
   - ThirdVineObject
+  - Dome
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Interactable
   - Floor
-  - NoSelfLayerCollide
+  - NoInteractableCollision
   - 
   - 
   - 

@@ -18,14 +18,14 @@ public class DaytimeSwitcher : MonoBehaviour {
       Daylight += (Time.deltaTime / switchTime);
       skyDomeMaterial.SetFloat("Fraction", Daylight);
     }
-    if (Daylight <= 0 && dn == dayNite.Night) {
+    if (Daylight <= 0 && dn != dayNite.Night) {
       dn = dayNite.Night;
       Daylight = 0;
       skyDomeMaterial.SetInt("DayOuter", 1);
       skyDomeMaterial.SetFloat("Fraction", 0);
       return;
     }
-    if (Daylight >= 1 && dn == dayNite.Day) {
+    if (Daylight >= 1 && dn != dayNite.Day) {
       dn = dayNite.Day;
       Daylight = 1;
       skyDomeMaterial.SetInt("DayOuter", 0);

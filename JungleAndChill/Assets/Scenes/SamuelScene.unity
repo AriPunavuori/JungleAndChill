@@ -214,28 +214,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
---- !u!1 &1143253766 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7462805151253102770, guid: 89a9b71ca9a978c4cbe0dde8efe6540a,
+--- !u!4 &979580138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 3}
-  m_PrefabInstance: {fileID: 7462805150109871028}
+  m_PrefabInstance: {fileID: 979580137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1143253767
+--- !u!1 &979580139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 979580137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &979580140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143253766}
+  m_GameObject: {fileID: 979580139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0316c8e72d8fca74f961511afff63522, type: 3}
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dn: 0
-  Daylight: 0
-  switchTime: 5
-  skyDomeMaterial: {fileID: 0}
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_CameraOutput: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1200330356
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +269,8 @@ GameObject:
   - component: {fileID: 1200330360}
   - component: {fileID: 1200330359}
   - component: {fileID: 1200330358}
+  - component: {fileID: 1200330363}
+  - component: {fileID: 1200330362}
   - component: {fileID: 1200330357}
   m_Layer: 0
   m_Name: TimeBall
@@ -272,8 +295,8 @@ MonoBehaviour:
   returnTimer: 10
   rayMask:
     serializedVersion: 2
-    m_Bits: 0
-  raySource: {fileID: 0}
+    m_Bits: 2048
+  raySource: {fileID: 979580138}
 --- !u!114 &1200330358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +433,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1200330362
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200330356}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1200330363
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200330356}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e391f00234292cc4f935308c11cf0e54, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1238733005
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +983,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1143253767, guid: 89a9b71ca9a978c4cbe0dde8efe6540a, type: 3}
+      propertyPath: skyDomeMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 66b1284b530830d468750b2905b47216, type: 2}
     - target: {fileID: 7462805151253102770, guid: 89a9b71ca9a978c4cbe0dde8efe6540a,
         type: 3}
       propertyPath: m_Name

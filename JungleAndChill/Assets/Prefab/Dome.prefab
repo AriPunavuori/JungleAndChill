@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7462805151253102780}
   - component: {fileID: 7462805151253102771}
   - component: {fileID: 7462805151253102782}
+  - component: {fileID: 1143253767}
   m_Layer: 11
   m_Name: Dome
-  m_TagString: Dome
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7462805151253102770}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -94,3 +95,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 9245d07b0b32fb04abf7d7c3bdaf0ac2, type: 3}
+--- !u!114 &1143253767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7462805151253102770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0316c8e72d8fca74f961511afff63522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dn: 0
+  Daylight: 0
+  switchTime: 5
+  skyDomeMaterial: {fileID: 0}

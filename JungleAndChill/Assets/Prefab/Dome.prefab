@@ -110,3 +110,4 @@ MonoBehaviour:
   dn: 0
   Daylight: 0
   switchTime: 5
+  skyDomeMaterial: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 using MyBox;
 
 [RequireComponent(typeof(Rigidbody))]
-public class FC_Attractor : MonoBehaviour {
+public class Attractor : MonoBehaviour {
 
   [Tooltip("Automatically search for bounds in children of parent")]
   public bool FindBoundsInSiblings = true;

@@ -7,10 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CloudedSunGlow
-  m_Shader: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
-  m_LightmapFlags: 1
+  m_Name: SkyBoxTransitionNormal
+  m_Shader: {fileID: -6465566751694194690, guid: cacdd5e7c81e11a43a91e998aa5d7f09,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -27,17 +28,23 @@ Material:
         m_Texture: {fileID: 8900000, guid: 3675d0c3c874f6b479bab57eb7e68c90, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - ExpandsToDay: 1
-    - Fraction: 0
-    - _Exposure: 1
-    - _Rotation: 0
+    - ExpandsToDay: 0
+    - Fraction: 0.55
     m_Colors:
     - DayColor: {r: 0, g: 0.9582106, b: 1.335078, a: 0}
     - NightColor: {r: 0, g: 0.06147003, b: 4, a: 0}
     - Source: {r: 1, g: 0, b: 0, a: 0}
-    - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+--- !u!114 &1399797765782458446
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1

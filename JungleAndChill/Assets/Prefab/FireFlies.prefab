@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5161f648ad96e947be8221924b83ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxResters: 1
+  prevPos: {x: 0, y: 0, z: 0}
 --- !u!1 &511826641
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5161f648ad96e947be8221924b83ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxResters: 1
+  prevPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1154784388
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5161f648ad96e947be8221924b83ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxResters: 1
+  prevPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1076738373724457576
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076738373849113901}
   m_Layer: 0
-  m_Name: FC
+  m_Name: FireFlies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

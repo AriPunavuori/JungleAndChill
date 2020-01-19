@@ -39,16 +39,18 @@ public class Spookable : MonoBehaviour {
       if (distance > maxSpookyDist) continue;
 
       var oldPos = oldPositions[i];
-      oldPositions[i] = spooks[i].position;
-      var velocity = (spooks[i].position - oldPos) / Time.deltaTime;
+      var spookPos = spooks[i].position;
+      oldPositions[i] = spookPos;
+      var velocity = (spookPos - oldPos) / Time.deltaTime;
       var speed = velocity.magnitude;
       if (speed >= spookVelocity) {
+        var angleMultiplier = 1 - Vector3.Angle(velocity, transform.position - spookPos) / 180;
         if (distance < minSpookyDist) {
-          rb.AddForce(velocity * maxSpookiness);
+          rb.AddForce(velocity.SetDirSafe(transform.position - spookPos) * maxSpookiness * angleMultiplier);
           continue;
         }
         var spookiness = distance.Remap(minSpookyDist, maxSpookyDist, maxSpookiness, 0);
-        rb.AddForce(velocity * spookiness);
+        rb.AddForce(velocity.SetDirSafe(transform.position - spookPos) * spookiness * angleMultiplier);
 
       }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FC_BoundingSphere : MonoBehaviour {
+public class BoundingSphere : MonoBehaviour {
   public float dist;
 
   public bool Inside(Vector3 point) {

@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.jungleandchill.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Projects\\JungleAndChill\\JungleAndChill\\JungleAndChill\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\sampp\\Desktop\\HNN - BU\\FactionBot\\JungleAndChill\\JungleAndChill\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "JungleAndChill [Testing]"

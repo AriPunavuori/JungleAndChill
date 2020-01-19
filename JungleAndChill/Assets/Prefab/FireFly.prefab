@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44982eae94bf2ea499aab7cf7e9b5aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractor: {fileID: 0}
+  attTransform: {fileID: 0}
   farStrength: 200
   nearStrength: 25
   nearDistance: 1.5
@@ -262,6 +262,7 @@ MonoBehaviour:
     - {fileID: 1857133821201680639}
     - {fileID: 1625211626}
     - {fileID: 5234192378283402640}
+    - {fileID: -3087207521856266779}
 --- !u!114 &-3087207521856266779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spookVelocity: 0.2
-  minSpookyDist: 0.2
+  minSpookyDist: 0
   maxSpookyDist: 1
-  maxSpookiness: 0
-  spooks: []
+  maxSpookiness: 10
+  spooks:
+  - {fileID: 0}
+  - {fileID: 0}

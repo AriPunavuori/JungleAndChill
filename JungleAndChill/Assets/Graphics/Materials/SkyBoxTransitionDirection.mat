@@ -30,11 +30,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - ExpandsToDay: 0
-    - Fraction: 0.3
+    - FlipTexture: 0
+    - Fraction: 0.8998108
     m_Colors:
     - DayColor: {r: 0, g: 0.9582106, b: 1.335078, a: 0}
     - NightColor: {r: 0, g: 0.06147003, b: 4, a: 0}
     - Source: {r: 1, g: 0, b: 0, a: 0}
+    - ViewDirectionMultiplier: {r: 1, g: -1, b: 1, a: 0}
 --- !u!114 &1399797765782458446
 MonoBehaviour:
   m_ObjectHideFlags: 11

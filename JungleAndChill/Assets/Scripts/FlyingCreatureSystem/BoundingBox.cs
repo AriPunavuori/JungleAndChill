@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FC_BoundingBox : MonoBehaviour {
+public class BoundingBox : MonoBehaviour {
   public Vector3 bounds;
 
   public bool Inside(Vector3 point) {

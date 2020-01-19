@@ -403,11 +403,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,6 +478,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -483,11 +503,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -543,6 +578,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -563,11 +603,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -623,6 +678,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -643,11 +703,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,6 +778,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -723,11 +803,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -783,6 +878,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -803,11 +903,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -862,6 +977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
@@ -958,11 +1078,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1018,6 +1153,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1038,11 +1178,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1098,6 +1253,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1118,11 +1278,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1178,6 +1353,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1198,11 +1378,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1258,6 +1453,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1278,11 +1478,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1338,6 +1553,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1358,11 +1578,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1418,6 +1653,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1438,11 +1678,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1498,6 +1753,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1518,11 +1778,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1578,6 +1853,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1598,11 +1878,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1658,6 +1953,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1678,11 +1978,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1738,6 +2053,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1758,11 +2078,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1818,6 +2153,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1838,11 +2178,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1898,6 +2253,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -1918,11 +2278,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1977,6 +2352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
@@ -2073,11 +2453,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2133,6 +2528,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2153,11 +2553,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2213,6 +2628,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2233,11 +2653,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2293,6 +2728,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2313,11 +2753,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2373,6 +2828,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2393,11 +2853,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2453,6 +2928,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2473,11 +2953,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2532,6 +3027,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
@@ -2628,11 +3128,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2688,6 +3203,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2708,11 +3228,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2768,6 +3303,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2788,11 +3328,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2848,6 +3403,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2868,11 +3428,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2928,6 +3503,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -2948,11 +3528,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3008,6 +3603,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -3028,11 +3628,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076738373724457577}
     m_Modifications:
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: spooks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: minSpookyDist
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3087207521856266779, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: maxSpookiness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3088,6 +3703,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_Name
@@ -3110,9 +3730,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5234192378283402638, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
-      propertyPath: attractor
+      propertyPath: attTransform
       value: 
-      objectReference: {fileID: 1076738374757059811}
+      objectReference: {fileID: 1076738374757059809}
     - target: {fileID: 5234192378283402643, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3167,6 +3787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234192378283402644, guid: 29a160cd79b38d645a0ef468b663f2f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5234192378283402647, guid: 29a160cd79b38d645a0ef468b663f2f1,
         type: 3}

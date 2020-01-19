@@ -73,7 +73,10 @@ VisualEffect:
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.15, y: 0.15, z: 0.15}
+        m_Name: Velocity
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
@@ -251,6 +254,7 @@ MonoBehaviour:
   wantDuration: 30
   restDistance: 0.1
   unrestChance: 0.05
+  unrestVelocity: 0.5
   maxDirectionStrength: 5
   maxTVDeltaMultInc: 5
   disables:

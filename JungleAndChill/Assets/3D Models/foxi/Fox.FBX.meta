@@ -15,7 +15,12 @@ ModelImporter:
   - first:
       74: 1389121407789637250
     second: Walk away
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: eb10b6f571322b443bec8c532c088270, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -34,7 +34,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"6e0f48f1-7910-4f13-af35-56ecb1d1c9e2\"\n    },\n    \"m_Name\": \"Fraction\",\n    \"m_DefaultReferenceName\": \"Vector1_E4F462BC\",\n    \"m_OverrideReferenceName\": \"Fraction\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 0.0,\n    \"m_FloatType\": 0,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.0\n    }\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"6e0f48f1-7910-4f13-af35-56ecb1d1c9e2\"\n    },\n    \"m_Name\": \"Fraction\",\n    \"m_DefaultReferenceName\": \"Vector1_E4F462BC\",\n    \"m_OverrideReferenceName\": \"Fraction\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 0.5,\n    \"m_FloatType\": 0,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.0\n    }\n}"
         },
         {
             "typeInfo": {

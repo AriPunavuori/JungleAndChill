@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
@@ -463,22 +463,22 @@ PrefabInstance:
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].time
-      value: 0.33479518
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].inSlope
-      value: 15.219582
+      value: -33.670517
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].outSlope
-      value: 15.219582
+      value: -33.670517
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
+      value: 0.01862582
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
@@ -498,42 +498,42 @@ PrefabInstance:
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].value
-      value: 6.1978416
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[2].outWeight
-      value: 0.33333334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].time
-      value: 0.73742974
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].inSlope
-      value: -2.8675723
+      value: -33.670517
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].outSlope
-      value: -2.8675723
+      value: -33.670517
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].inWeight
-      value: 0.37969387
+      value: 0.01862582
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].value
-      value: 6.328358
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: deScaleCurve.m_Curve.Array.data[3].outWeight
-      value: 0.33333334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}

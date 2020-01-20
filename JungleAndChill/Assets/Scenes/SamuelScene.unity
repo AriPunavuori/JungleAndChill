@@ -202,43 +202,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 979580137}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1863399425
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SkyBoxTransitionDirection (Instance) (Instance)
-  m_Shader: {fileID: -6465566751694194690, guid: e9baedccd2405a540a22c9fca6f6c219,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Day:
-        m_Texture: {fileID: 8900000, guid: 18a0be10f0f64ac4c9f679d68e2cf857, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Night:
-        m_Texture: {fileID: 8900000, guid: 3675d0c3c874f6b479bab57eb7e68c90, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ExpandsToDay: 0
-    - FlipTexture: 0
-    - Fraction: 0
-    m_Colors:
-    - DayColor: {r: 0, g: 0.9582106, b: 1.335078, a: 0}
-    - NightColor: {r: 0, g: 0.015706804, b: 0.9999999, a: 0}
-    - Source: {r: 0, g: 0, b: -1, a: 0}
-    - ViewDirectionMultiplier: {r: 1, g: -1, b: 1, a: 0}
 --- !u!1 &2066036812
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,11 +302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 901425983717473674, guid: 8d34472ef2b078a46abae6d702cc313a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1863399425}
     - target: {fileID: 3709722627315927652, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: m_Name

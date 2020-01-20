@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VineDropper : MonoBehaviour
 {
-    GameObject vine;
+    public GameObject vine;
     Vector3 target;
     float dropTime = 5f;
     public bool first;
@@ -13,7 +13,7 @@ public class VineDropper : MonoBehaviour
     bool startVineDropping;
 
     void Start() {
-        vine = GameObject.Find("Vine");
+        //vine = GameObject.Find("Vine");
         target = vine.transform.position + Vector3.down * 5;
     }
 

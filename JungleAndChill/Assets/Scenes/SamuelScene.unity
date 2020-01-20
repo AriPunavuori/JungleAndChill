@@ -302,6 +302,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
+        type: 3}
+      propertyPath: descaleDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
+        type: 3}
+      propertyPath: doNoiseScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
+        type: 3}
+      propertyPath: triggerDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3709722627315927652, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: m_Name
@@ -1001,6 +1016,26 @@ PrefabInstance:
     - target: {fileID: 1337788799, guid: 6585c17918d033a44bc0065441caeda3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980592448740790467, guid: 6585c17918d033a44bc0065441caeda3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08568555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980592448740790467, guid: 6585c17918d033a44bc0065441caeda3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.10039852
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980592448740790467, guid: 6585c17918d033a44bc0065441caeda3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08851035
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980592448740790467, guid: 6585c17918d033a44bc0065441caeda3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9872913
       objectReference: {fileID: 0}
     - target: {fileID: 5312312878859048490, guid: 6585c17918d033a44bc0065441caeda3,
         type: 3}

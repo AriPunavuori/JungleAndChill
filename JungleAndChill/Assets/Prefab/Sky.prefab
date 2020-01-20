@@ -305,8 +305,8 @@ MonoBehaviour:
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
-  scaleReleaseVelocity: 1.1
-  scaleReleaseVelocityThreshold: -1
+  scaleReleaseVelocity: 20
+  scaleReleaseVelocityThreshold: 1
   scaleReleaseVelocityCurve:
     serializedVersion: 2
     m_Curve:
@@ -319,6 +319,15 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.861825
+      value: 0.35356733
+      inSlope: 0.92351323
+      outSlope: 0.92351323
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -354,39 +363,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3474f11685e45a64aa34f37d89fa745d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: -1
-  deScaleCurve:
+  triggerDistance: 90
+  createOnHit: {fileID: 8638226507933805581, guid: f89100b52e59c5e4799e4597cb2140cf,
+    type: 3}
+  descaleCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.11678927
-      outSlope: 0.11678927
+      inSlope: 0.12494753
+      outSlope: 0.12494753
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.16326539
+      outWeight: 0.19387753
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -2.6161046
-      outSlope: -2.6161046
+      inSlope: -110.26686
+      outSlope: -110.26686
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.06802714
+      inWeight: 0.0034014583
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  deScaleDuration: 0.2
-  deScaleSpeedDivisor: 5
-  reScaleCurve:
+  descaleDuration: 3
+  descaleSpeedDivisor: 5
+  doTimeScale: 0
+  shaderTimeScaleCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
+      inSlope: 1.9908876
+      outSlope: 1.9908876
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.9908876
+      inSlope: 1.9908876
+      outSlope: 1.9908876
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  doNoiseScale: 0
+  shaderNoiseScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 6.0341396
+      outSlope: 6.0341396
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.04388857
+    - serializedVersion: 3
+      time: 1
+      value: 9
+      inSlope: -0.007226125
+      outSlope: -0.007226125
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33519015
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  doNoiseMultRange: 0
+  shaderNoiseMultRangeMin:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -395,7 +457,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 2.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -405,8 +467,64 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  reScaleDuration: 0.5
-  createOnHit: {fileID: 0}
+  shaderNoiseMultRangeMax:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rescaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.5855167
+      outSlope: 1.5855167
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09779509
+    - serializedVersion: 3
+      time: 0.81279147
+      value: 1.0311805
+      inSlope: -0.0075658276
+      outSlope: -0.0075658276
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.83107877
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0
+      outSlope: -0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18367356
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rescaleDuration: 0.5
 --- !u!114 &191255796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 23f7e94649da33e4281e0744d1430ea6, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

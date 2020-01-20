@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3474f11685e45a64aa34f37d89fa745d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 90
+  triggerDistance: -1
   createOnHit: {fileID: 8638226507933805581, guid: f89100b52e59c5e4799e4597cb2140cf,
     type: 3}
   descaleCurve:
@@ -390,7 +390,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  descaleDuration: 3
+  descaleDuration: 5
   descaleSpeedDivisor: 5
   doTimeScale: 0
   shaderTimeScaleCurve:
@@ -417,7 +417,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  doNoiseScale: 0
+  doNoiseScale: 1
   shaderNoiseScaleCurve:
     serializedVersion: 2
     m_Curve:

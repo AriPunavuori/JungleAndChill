@@ -302,21 +302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
-        type: 3}
-      propertyPath: descaleDuration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
-        type: 3}
-      propertyPath: doNoiseScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1970272840887013625, guid: 8d34472ef2b078a46abae6d702cc313a,
-        type: 3}
-      propertyPath: triggerDistance
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 3709722627315927652, guid: 8d34472ef2b078a46abae6d702cc313a,
         type: 3}
       propertyPath: m_Name

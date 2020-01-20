@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3474f11685e45a64aa34f37d89fa745d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: -1
+  triggerDistance: 90
   createOnHit: {fileID: 8638226507933805581, guid: f89100b52e59c5e4799e4597cb2140cf,
     type: 3}
   descaleCurve:
@@ -378,6 +378,24 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0.19387753
+    - serializedVersion: 3
+      time: 0.35496816
+      value: 4.8318276
+      inSlope: 32.043144
+      outSlope: 32.043144
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5550201
+      value: 14.154927
+      inSlope: 32.852966
+      outSlope: 32.852966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0

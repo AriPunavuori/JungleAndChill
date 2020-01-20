@@ -1,5 +1,5 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 20.01.2020 15:09:12
+# File Created: 20.01.2020 15:20:00
 
 mtllib Chest_Bottom.mtl
 
@@ -702,7 +702,7 @@ vt 0.1371 0.7835 -0.0000
 
 o Box001
 g Box001
-usemtl Material__28
+usemtl Material__29
 s 2
 f 1/1/1 2/2/2 3/3/3 4/4/4 
 s 1

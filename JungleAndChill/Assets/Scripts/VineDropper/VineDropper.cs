@@ -14,7 +14,7 @@ public class VineDropper : MonoBehaviour
 
     void Start() {
         //vine = GameObject.Find("Vine");
-        target = vine.transform.position + Vector3.down * 2;
+        target = vine.transform.position + Vector3.down * 3;
     }
 
     private void OnTriggerEnter(Collider other) {

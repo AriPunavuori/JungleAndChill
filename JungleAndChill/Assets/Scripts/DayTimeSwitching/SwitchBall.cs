@@ -7,31 +7,47 @@ public class SwitchBall : MonoBehaviour {
 
   public float triggerDistance = 5f;
 
-  public AnimationCurve deScaleCurve;
-  public float deScaleDuration = 0.2f;
-  public float deScaleSpeedDivisor = 5;
-
-  public AnimationCurve reScaleCurve;
-  public float reScaleDuration = 0.5f;
-
   public GameObject createOnHit;
 
+  [MyBox.Foldout("Descale Settings", true)]
+  public AnimationCurve descaleCurve;
+  public float descaleDuration = 0.2f;
+  public float descaleSpeedDivisor = 5;
+
+  [MyBox.Foldout("Shader Settings", true)]
+  public bool doTimeScale = true;
+  public AnimationCurve shaderTimeScaleCurve;
+  public bool doNoiseScale = true;
+  public AnimationCurve shaderNoiseScaleCurve;
+  public bool doNoiseMultRange = true;
+  public AnimationCurve shaderNoiseMultRangeMin;
+  public AnimationCurve shaderNoiseMultRangeMax;
+
+  [MyBox.Foldout("Rescale Settings", true)]
+  public AnimationCurve rescaleCurve;
+  public float rescaleDuration = 0.5f;
+
+
+  DaytimeSwitcher ds;
+  Rigidbody rb;
+  Material mat;
+  float normTimeScale;
+  Vector2 normNoiseMultRange;
+  float normNoiseScale;
+  Transform cam;
   GameObject created;
   Vector3 spawnPoint;
   Vector3 throwPoint;
-  DaytimeSwitcher ds;
-  Rigidbody rb;
+  Vector3 scale;
   bool ballThrown;
   bool ballHit;
-  Transform cam;
 
-  Vector3 scale;
 
-  bool deScale = false;
-  float deScaleTime;
+  bool descale = false;
+  float descaleTime;
 
-  bool reScale = false;
-  float reScaleTime;
+  bool rescale = false;
+  float rescaleTime;
 
   private void Start() {
     spawnPoint = transform.position;
@@ -43,28 +59,54 @@ public class SwitchBall : MonoBehaviour {
     inter.onDetachedFromHand += OnDetach;
     cam = Camera.main.transform;
     scale = transform.localScale;
+
+    if (doTimeScale || doNoiseScale || doNoiseMultRange)
+      mat = GetComponent<Renderer>().material;
+
+    if (doTimeScale)
+      normTimeScale = mat.GetFloat("TimeScale");
+
+    if (doNoiseScale)
+      normNoiseScale = mat.GetFloat("NoiseScale");
+
+    if (doNoiseMultRange)
+      normNoiseMultRange = mat.GetVector("NoiseMultRange");
+
     ReSpawn();
   }
 
   private void Update() {
 
-    if (deScale) {
-      var fraction = Mathf.Clamp01((Time.time - deScaleTime) / deScaleDuration);
-      transform.localScale = deScaleCurve.Evaluate(fraction) * scale;
-      rb.velocity = rb.velocity / deScaleSpeedDivisor;
+    if (descale) {
+      var fraction = Mathf.Clamp01((Time.time - descaleTime) / descaleDuration);
+      transform.localScale = descaleCurve.Evaluate(fraction) * scale;
+      if (doTimeScale) mat.SetFloat("TimeScale", shaderTimeScaleCurve.Evaluate(fraction) * normTimeScale);
+      if (doNoiseScale) mat.SetFloat("NoiseScale", shaderNoiseScaleCurve.Evaluate(fraction) * normNoiseScale);
+      if (doNoiseMultRange) {
+        mat.SetVector("NoiseMultRange", new Vector2(
+          shaderTimeScaleCurve.Evaluate(fraction) * normNoiseMultRange.x,
+          shaderTimeScaleCurve.Evaluate(fraction) * normNoiseMultRange.y
+        ));
+      }
+      rb.velocity = rb.velocity / descaleSpeedDivisor;
       if (fraction == 1) {
         ds.SetSource(cam.position - transform.position);
         ds.SwitchDaytime();
+        if (doTimeScale) mat.SetFloat("TimeScale", normTimeScale);
+        if (doNoiseScale) mat.SetFloat("NoiseScale", 1);
+        if (doNoiseMultRange) mat.SetVector("NoiseMultRange", Vector2.one);
         if (createOnHit != null) created = Instantiate(createOnHit, transform.position, Quaternion.identity);
-        deScale = false;
+        descale = false;
       }
-    } else if (reScale) {
-      var fraction = Mathf.Clamp01((Time.time - reScaleTime) / reScaleDuration);
-      transform.localScale = reScaleCurve.Evaluate(fraction) * scale;
-      if (fraction == 1) reScale = false;
+    } else if (rescale) {
+      var fraction = Mathf.Clamp01((Time.time - rescaleTime) / rescaleDuration);
+      if (doNoiseScale) mat.SetFloat("NoiseScale", normNoiseScale * fraction);
+      if (doNoiseMultRange) mat.SetVector("NoiseMultRange", normNoiseMultRange * fraction);
+      transform.localScale = rescaleCurve.Evaluate(fraction) * scale;
+      if (fraction == 1) rescale = false;
     }
 
-    if (ballHit && Time.time >= deScaleTime + ds.switchTime + deScaleDuration) {
+    if (ballHit && Time.time >= descaleTime + ds.switchTime + descaleDuration) {
       ReSpawn();
     }
 
@@ -77,8 +119,8 @@ public class SwitchBall : MonoBehaviour {
   }
 
   void DeSpawn() {
-    deScale = true;
-    deScaleTime = Time.time;
+    descale = true;
+    descaleTime = Time.time;
   }
 
   void ReSpawn() {
@@ -88,8 +130,8 @@ public class SwitchBall : MonoBehaviour {
 
     if (created != null) Destroy(created);
     transform.localScale = Vector3.zero;
-    reScale = true;
-    reScaleTime = Time.time;
+    rescale = true;
+    rescaleTime = Time.time;
 
     ballThrown = false;
     ballHit = false;

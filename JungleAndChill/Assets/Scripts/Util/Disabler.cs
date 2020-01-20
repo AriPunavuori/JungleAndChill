@@ -5,35 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Disabler {
 
-  [Tooltip("Drop gameObject to add it to the list of disabled objects")]
-  public GameObject addGameObject;
-  [Tooltip("Drop behaviour to add it to the list of disabled objects")]
-  public Behaviour addBehaviour;
-  [Tooltip("Drop renderer to add it to the list of disabled objects")]
-  public Renderer addRenderer;
-
   [Tooltip("Only Renderer, Behaviour and GameObject types are supported!")]
   public List<Object> objects;
-
-
-  void OnValidate() {
-    // !!! NOT CALLED
-    if (addGameObject != null) objects.Add(addGameObject);
-    addGameObject = null;
-
-    if (addBehaviour != null) objects.Add(addBehaviour);
-    addBehaviour = null;
-
-    if (addRenderer != null) objects.Add(addRenderer);
-    addRenderer = null;
-
-    foreach (var obj in objects) {
-      if (!(obj is Renderer) && !(obj is GameObject) && !(obj is Behaviour)) {
-        objects.Remove(obj);
-      }
-    }
-  }
-
 
   public void DisableComponents() {
     foreach (var obj in objects)

@@ -11,9 +11,14 @@ public class PathTree : MonoBehaviour {
   private int childCount;
 
 
+  void Awake() {
+    ReCalculate();
+  }
+
   void Update() {
     if (!Application.isPlaying) {
       var prevCount = childCount;
+      childCount = 0;
       foreach (var child in transform)
         childCount++;
       if (prevCount != childCount)
@@ -23,7 +28,7 @@ public class PathTree : MonoBehaviour {
 
   [MyBox.ButtonMethod]
   void ReCalculate() {
-    List<Line> lines = new List<Line>();
+    List<(Transform start, Transform end)> lines = new List<(Transform start, Transform end)>();
     Transform startTransform = default(Transform);
 
     int i = 0;
@@ -33,7 +38,7 @@ public class PathTree : MonoBehaviour {
       if ((i / 2f) % 1 == 0) { // Flip flop
         start = child;
       } else {
-        lines.Add(new Line(start, child));
+        lines.Add((start, child));
       }
       i++;
     }
@@ -54,24 +59,14 @@ public class PathTree : MonoBehaviour {
   public class PathNetwork {
     public List<Branch> branches = new List<Branch>();
 
-    public PathNetwork(Transform start, List<Line> lines) {
+    public PathNetwork(Transform start, List<(Transform start, Transform end)> lines) {
       // Create neighborless branches
       foreach (var line in lines) {
         if (!branches.Exists(b => b.root == line.start))
           branches.Add(new Branch(line.start, new Branch[0]));
-        // Naively add all ends as branches and remove later
-        if (!lines.Exists(l => l.start == line.end))
+        // Add dead ends as branches
+        if (!lines.Exists(l => l.start.position == line.end.position))
           branches.Add(new Branch(line.end, new Branch[0]));
-      }
-      // Find unnecessary neighborless branches
-      var remove = new List<Branch>();
-      foreach (var branch in branches) {
-        if (branch.neighbors.Length == 0 && branches.Exists(b => b.root == branch.root && branch != b))
-          remove.Add(branch);
-      }
-      // Remove unnecessary branches
-      foreach (var branch in remove) {
-        branches.Remove(branch);
       }
       // Find neighbors for branches
       foreach (var branch in branches) {
@@ -83,7 +78,6 @@ public class PathTree : MonoBehaviour {
             foreach (var branch2 in branches) {
               if (line.end.position == branch2.root.position) {
                 neighbors.Add(branch2);
-                break;
               }
             }
           }
@@ -93,6 +87,22 @@ public class PathTree : MonoBehaviour {
     }
   }
 
+  public static Vector3 GetPosition(Branch source, Branch target, float fraction, out float overshootFraction) {
+    var dir = target.root.position - source.root.position;
+    overshootFraction = Mathf.Clamp(fraction - 1, 0, float.PositiveInfinity);
+    return source.root.position + dir * fraction;
+  }
+
+  public static Vector3 MoveTowards(Branch source, Branch target, float fraction, float length, out float overshootLength, out float newFraction) {
+    var dir = target.root.position - source.root.position;
+    var moveFraction = fraction + length / dir.magnitude;
+    var pos = GetPosition(source, target, moveFraction, out var overshootFraction);
+    overshootLength = overshootFraction * dir.magnitude;
+    newFraction = (pos - source.root.position).magnitude / dir.magnitude;
+    return pos;
+  }
+
+  [System.Serializable]
   public class Branch {
     public Transform root;
     public Branch[] neighbors;
@@ -101,15 +111,18 @@ public class PathTree : MonoBehaviour {
       this.root = root;
       this.neighbors = neighbors;
     }
-  }
 
-  public struct Line {
-    public Transform start;
-    public Transform end;
+    public Branch GetRandomNeighbor() {
+      if (neighbors.Length == 0) return null;
+      return neighbors[Random.Range(0, neighbors.Length - 1)];
+    }
 
-    public Line(Transform start, Transform end) {
-      this.start = start;
-      this.end = end;
+    public Vector3 GetPosition(Branch target, float fraction, out float overshootFraction) {
+      return PathTree.GetPosition(this, target, fraction, out overshootFraction);
+    }
+
+    public Vector3 MoveTowards(Branch target, float fraction, float length, out float overshootLength, out float newFraction) {
+      return PathTree.MoveTowards(this, target, fraction, length, out overshootLength, out newFraction);
     }
   }
 }

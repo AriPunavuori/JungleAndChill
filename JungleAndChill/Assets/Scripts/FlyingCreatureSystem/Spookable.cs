@@ -41,7 +41,7 @@ public class Spookable : MonoBehaviour {
       var oldPos = oldPositions[i];
       var spookPos = spooks[i].position;
       oldPositions[i] = spookPos;
-      var velocity = (spookPos - oldPos) / Time.deltaTime;
+      var velocity = (spookPos - oldPos) / Time.smoothDeltaTime;
       var speed = velocity.magnitude;
       if (speed >= spookVelocity) {
         var angleMultiplier = 1 - Vector3.Angle(velocity, transform.position - spookPos) / 180;

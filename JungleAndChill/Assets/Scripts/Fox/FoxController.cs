@@ -10,6 +10,8 @@ public class FoxController : MonoBehaviour {
   public float awakeTimer = 5;
 
   [MyBox.Foldout("Animation")]
+  public Animator animator;
+  [MyBox.Foldout("Animation")]
   [Tooltip("Time until fox comes to check out player")]
   public float restAnimDuration = 1;
   [MyBox.Foldout("Animation")]
@@ -64,6 +66,8 @@ public class FoxController : MonoBehaviour {
 
 
   void Start() {
+    if (animator == null)
+      animator = GetComponent<Animator>();
     Reset();
   }
 
@@ -84,6 +88,8 @@ public class FoxController : MonoBehaviour {
     dir = target.root.position - source.root.position;
     transform.rotation = Quaternion.LookRotation(dir.normalized);
 
+    animator.SetFloat("Speed", velocity);
+
     switch (state) {
       case State.sleep:
         if (Time.time > sleepTime + awakeTimer)
@@ -91,6 +97,7 @@ public class FoxController : MonoBehaviour {
         break;
 
       case State.walking:
+        SetAnimation(Anims.WalkAway);
         velocity = Mathf.Lerp(velocity, walkingSpeed, Time.deltaTime);
         transform.position = source.MoveTowards(target, fraction, velocity * Time.deltaTime + overshoot, out overshoot, out fraction);
         if (fraction > 1) {
@@ -113,6 +120,7 @@ public class FoxController : MonoBehaviour {
         break;
 
       case State.restingStart: {
+          SetAnimation(Anims.Sit);
           var fract = (Time.time - restStartTime) / restAnimDuration;
           if (fract >= 1)
             state = State.resting;
@@ -125,6 +133,7 @@ public class FoxController : MonoBehaviour {
         break;
 
       case State.restingEnd: {
+          SetAnimation(Anims.WalkAway);
           var fract = (Time.time - restEndTime) / unrestAnimDuration;
           if (fract >= 1) {
             state = State.running;
@@ -135,6 +144,7 @@ public class FoxController : MonoBehaviour {
         }
 
       case State.running:
+        SetAnimation(Anims.WalkAway);
         velocity = Mathf.Lerp(velocity, runningSpeed, Time.deltaTime);
         transform.position = source.MoveTowards(target, fraction, velocity * Time.deltaTime + overshoot, out overshoot, out fraction);
         if (fraction > 1) {
@@ -169,5 +179,14 @@ public class FoxController : MonoBehaviour {
     state = State.restingEnd;
     restEndTime = Time.time;
     disables.DisableComponents();
+  }
+
+  void SetAnimation(Anims anim) {
+    animator.SetBool("WalkAway", anim == Anims.WalkAway);
+    animator.SetBool("Sit", anim == Anims.Sit);
+  }
+  private enum Anims {
+    WalkAway,
+    Sit,
   }
 }

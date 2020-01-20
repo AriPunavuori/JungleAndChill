@@ -28,7 +28,7 @@ public class FoxController : MonoBehaviour {
 
 
   [Tooltip("Run away if spooky thing at closer than this")]
-  public float spookyDistance = 0.25f;
+  public float spookyDistance = 0.50f;
   public GameObject[] spookyThings;
 
   [Tooltip("Add objects from anywhere here that you want to be disabled when running away (eg. look constraint!)")]

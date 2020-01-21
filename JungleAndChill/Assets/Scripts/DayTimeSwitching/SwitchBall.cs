@@ -118,11 +118,13 @@ public class SwitchBall : MonoBehaviour {
     }
   }
 
+  [MyBox.ButtonMethod]
   void DeSpawn() {
     descale = true;
     descaleTime = Time.time;
   }
 
+  [MyBox.ButtonMethod]
   void ReSpawn() {
     rb.MovePosition(spawnPoint);
     rb.velocity = Vector3.zero;

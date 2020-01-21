@@ -17,6 +17,8 @@ public class FoxController : MonoBehaviour {
   [MyBox.Foldout("Animation")]
   [Tooltip("Time until fox comes to check out player")]
   public float unrestAnimDuration = 1;
+  [Tooltip("Time given for jump animation to finish")]
+  public float disappearDuration = 1;
 
   [MyBox.Foldout("Animation")]
   public Vector3 unrestRotation;
@@ -28,7 +30,8 @@ public class FoxController : MonoBehaviour {
   [Header("The end of this curve should not be at value 0 or the fox will never reach the target!!!")]
   public AnimationCurve stopSpeedCurve = AnimationCurve.EaseInOut(0, 1, 1, 0.05f);
 
-  [Tooltip("Rotation and movement should be smooth recardless of segment count!")]
+  [Tooltip("Movement will be smooth regardless of this value. Curve length and visuals may be affected though")]
+  [Range(2, 50)]
   public int bezierSegments = 5;
 
   [Tooltip("Run away if spooky thing at closer than this")]
@@ -47,6 +50,7 @@ public class FoxController : MonoBehaviour {
     resting,
     restingEnd,
     running,
+    vanish,
   }
 
   Vector3 dir;
@@ -64,6 +68,7 @@ public class FoxController : MonoBehaviour {
   float sleepTime;
   float restStartTime;
   float restEndTime;
+  float disappearTime;
 
   List<Vector3> points;
   float bezierLength;
@@ -89,12 +94,17 @@ public class FoxController : MonoBehaviour {
     transform.position = branch1.root.position;
     prevPos = transform.position;
 
+    SetAnimation(Anims.None);
     disables.EnableComponents();
   }
 
   void Update() {
+    if (branch2 == null) {
+      Reset();
+      return;
+    }
     dir = transform.position - prevPos;
-    if (dir != Vector3.zero/* state < State.restingStart || state > State.restingEnd*/ )
+    if (dir != Vector3.zero && state != State.vanish)
       transform.rotation = Quaternion.LookRotation(dir.normalized);
     prevPos = transform.position;
 
@@ -111,13 +121,7 @@ public class FoxController : MonoBehaviour {
         velocity = Mathf.Lerp(velocity, walkingSpeed, Time.deltaTime);
         MoveAlongPoints(velocity * Time.deltaTime + overshoot);
         if (fraction > 1) {
-          branch1 = branch2;
-          branch2 = branch1.GetRandomNeighbor();
-          branch3 = branch2.GetRandomNeighbor();
-          branch4 = branch3.GetRandomNeighbor();
-          points = GetPoints();
-
-          fraction = 0;
+          AdvanceTree();
           MoveAlongPoints(overshoot);
 
           var comp = branch2.root.GetComponent<BranchComponent>();
@@ -164,25 +168,35 @@ public class FoxController : MonoBehaviour {
         velocity = Mathf.Lerp(velocity, runningSpeed, Time.deltaTime);
         MoveAlongPoints(velocity * Time.deltaTime + overshoot);
         if (fraction > 1) {
-          branch1 = branch2;
-          branch2 = branch1.GetRandomNeighbor();
-          branch3 = branch2.GetRandomNeighbor();
-          branch4 = branch3.GetRandomNeighbor();
-          points = GetPoints();
-
-          if (branch2 == null) {
-            Reset();
-            return;
-          }
-          fraction = 0;
+          AdvanceTree();
           MoveAlongPoints(overshoot);
         }
         break;
 
-      default:
-        break;
+      case State.vanish: {
+          SetAnimation(Anims.Jump);
+          var fract = (Time.time - disappearTime) / disappearDuration;
+          if (fract >= 1) {
+            Reset();
+          }
+          break;
+        }
     }
+  }
 
+  void AdvanceTree() {
+    branch1 = branch2;
+    branch2 = branch1.GetRandomNeighbor();
+    branch3 = branch2.GetRandomNeighbor();
+    if (branch2 == null || branch3 == null) {
+      disappearTime = Time.time;
+      state = State.vanish;
+      return;
+    }
+    branch4 = branch3.GetRandomNeighbor();
+    points = GetPoints();
+
+    fraction = 0;
   }
 
   List<Vector3> GetPoints() {
@@ -230,6 +244,8 @@ public class FoxController : MonoBehaviour {
   void OnDrawGizmos() {
     if (network.network == null) return;
 
+    Gizmos.color = Color.magenta;
+
     foreach (var branch in network.network.branches) {
       DrawBranch(branch);
     }
@@ -266,6 +282,7 @@ public class FoxController : MonoBehaviour {
           Gizmos.DrawLine(prevPoint, point);
           prevPoint = point;
         }
+        DrawArrow.Gizmo(points[points.Count - 2], points[points.Count - 1] - points[points.Count - 2]);
       }
     }
   }
@@ -293,10 +310,13 @@ public class FoxController : MonoBehaviour {
   void SetAnimation(Anims anim) {
     animator.SetBool("WalkAway", anim == Anims.WalkAway);
     animator.SetBool("Sit", anim == Anims.Sit);
+    animator.SetBool("Jump", anim == Anims.Jump);
   }
   private enum Anims {
+    None,
     WalkAway,
     Sit,
+    Jump,
   }
 
 }

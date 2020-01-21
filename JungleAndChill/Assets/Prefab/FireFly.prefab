@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5234192378283402643}
-  - component: {fileID: 5234192378283402642}
   - component: {fileID: 5234192378283402645}
   - component: {fileID: 5234192378283402644}
   - component: {fileID: 5234192378283402641}
@@ -40,14 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5234192378283402642
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5234192378283402647}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!2083052967 &5234192378283402645
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -186,7 +177,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234192378283402647}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2e81b378186c0ed4c98c04cfd4096914, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -257,10 +248,13 @@ MonoBehaviour:
   unrestVelocity: 0.5
   maxDirectionStrength: 5
   maxTVDeltaMultInc: 5
+  onRest:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnrest:
+    m_PersistentCalls:
+      m_Calls: []
   disables:
-    addGameObject: {fileID: 0}
-    addBehaviour: {fileID: 0}
-    addRenderer: {fileID: 0}
     objects:
     - {fileID: 5234192378283402638}
     - {fileID: 1857133821201680639}

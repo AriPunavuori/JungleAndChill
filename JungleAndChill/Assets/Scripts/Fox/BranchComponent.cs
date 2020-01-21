@@ -51,7 +51,8 @@ public class BranchComponent : MonoBehaviour {
   void Update() {
     if (transform.position != prevPos) {
       prevPos = transform.position;
-      tree.ReCalculate();
+      if (tree != null)
+        tree.ReCalculate();
     }
   }
 }

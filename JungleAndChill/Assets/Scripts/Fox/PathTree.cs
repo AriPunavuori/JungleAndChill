@@ -61,6 +61,7 @@ public class PathTree : MonoBehaviour {
 
   [MyBox.ButtonMethod]
   public void ReCalculate() {
+    if (blockRecalculate) return;
     blockRecalculate = true;
     CheckChildren();
     List<(Transform start, Transform end)> lines = new List<(Transform start, Transform end)>();

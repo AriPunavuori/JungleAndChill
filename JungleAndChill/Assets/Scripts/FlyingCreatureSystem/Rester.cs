@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -21,6 +22,10 @@ public class Rester : MonoBehaviour {
   public float maxDirectionStrength = 1;
   [Tooltip("Additional strength added to TargetVelocity component if it exists on this object")]
   public float maxTVDeltaMultInc;
+
+  public UnityEvent onRest;
+  public UnityEvent onUnrest;
+
   [Tooltip("Disable these things when resting")]
   public Disabler disables;
 
@@ -44,6 +49,8 @@ public class Rester : MonoBehaviour {
     transform.rotation = spot.transform.rotation;
     rb.velocity = Vector3.zero;
     rb.angularVelocity = Vector3.zero;
+
+    onRest.Invoke();
   }
 
   public void StopResting() {
@@ -54,6 +61,8 @@ public class Rester : MonoBehaviour {
     if (tv != null) tv.enabled = true;
     transform.parent = mainParent;
     unrestTime = Time.time;
+
+    onUnrest.Invoke();
     spot = null;
   }
 
@@ -110,7 +119,7 @@ public class Rester : MonoBehaviour {
 
     var fract = (Time.time - (unrestTime + minDuration)) / (wantDuration + minDuration);
     if (fract < 0) {
-      tv.strength = origStrength;
+      if (tv != null) tv.strength = origStrength;
       return;
     }
 

@@ -39,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1428430019257185568}
+  - component: {fileID: 1097616197}
   m_Layer: 0
   m_Name: pandanen
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2704856123130955571}
-  m_LocalRotation: {x: -0, y: -0.8148923, z: -0, w: 0.57961243}
+  m_LocalRotation: {x: 0, y: -0.81489015, z: 0, w: 0.5796155}
   m_LocalPosition: {x: 3.086, y: 5.09, z: 0.972}
   m_LocalScale: {x: 0.465015, y: 0.465015, z: 0.465015}
   m_Children:
@@ -64,6 +65,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -109.15301, z: 0}
+--- !u!95 &1097616197
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2704856123130955571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d19f65a4b62f3414bba2e4d6ad6727a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4079718937700277261
 GameObject:
   m_ObjectHideFlags: 0

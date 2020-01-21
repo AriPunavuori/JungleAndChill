@@ -10,40 +10,81 @@ public class PathTree : MonoBehaviour {
   private PathNetwork _network;
   private int childCount;
 
+  private bool blockRecalculate = false;
+
 
   void Awake() {
     ReCalculate();
   }
 
   void Update() {
+    blockRecalculate = false;
     if (!Application.isPlaying) {
       var prevCount = childCount;
       childCount = 0;
-      foreach (var child in transform)
-        childCount++;
-      if (prevCount != childCount)
+      CountChildren(transform);
+      if (prevCount != childCount || _network == null) {
         ReCalculate();
+      }
+    }
+
+    void CountChildren(Transform t) {
+      foreach (Transform child in t) {
+        childCount++;
+        CountChildren(child);
+      }
+    }
+  }
+
+  void CheckChildren() {
+    int i = 0;
+    Check(transform);
+    void Check(Transform t) {
+      i++;
+      if (t != transform) {
+        var comp = t.GetComponent<BranchComponent>();
+        if ((i / 2f) % 1 == 0) { // Flip flop
+          if (comp == null) comp = (BranchComponent)t.gameObject.AddComponent(typeof(BranchComponent));
+          comp.Dummy = false;
+          comp.tree = this;
+        } else {
+          if (comp == null) comp = (BranchComponent)t.gameObject.AddComponent(typeof(BranchComponent));
+          comp.Dummy = true;
+          comp.tree = this;
+        }
+      }
+      foreach (Transform child in t) {
+        Check(child);
+      }
     }
   }
 
   [MyBox.ButtonMethod]
-  void ReCalculate() {
+  public void ReCalculate() {
+    if (blockRecalculate) return;
+    blockRecalculate = true;
+    CheckChildren();
     List<(Transform start, Transform end)> lines = new List<(Transform start, Transform end)>();
     Transform startTransform = default(Transform);
 
     int i = 0;
     Transform start = default(Transform);
-    foreach (Transform child in transform) {
-      if (i == 0) startTransform = child;
-      if ((i / 2f) % 1 == 0) { // Flip flop
-        start = child;
-      } else {
-        lines.Add((start, child));
-      }
-      i++;
-    }
+    TraverseChildren(transform);
 
     _network = new PathNetwork(startTransform, lines);
+
+    void TraverseChildren(Transform t) {
+      foreach (Transform child in t) {
+        if (i == 0) startTransform = child;
+        if ((i / 2f) % 1 == 0) { // Flip flop
+          start = child;
+        } else {
+          lines.Add((start, child));
+        }
+        i++;
+        TraverseChildren(child);
+      }
+    }
   }
 
   void OnDrawGizmos() {
@@ -88,10 +129,11 @@ public class PathTree : MonoBehaviour {
   }
 
   public static Vector3 GetPosition(Branch source, Branch target, float fraction, out float overshootFraction) {
-    var dir = target.root.position - source.root.position;
+    var dir = target - source;
     overshootFraction = Mathf.Clamp(fraction - 1, 0, float.PositiveInfinity);
     return source.root.position + dir * fraction;
   }
+
 
   public static Vector3 MoveTowards(Branch source, Branch target, float fraction, float length, out float overshootLength, out float newFraction) {
     var dir = target.root.position - source.root.position;
@@ -102,10 +144,11 @@ public class PathTree : MonoBehaviour {
     return pos;
   }
 
-  [System.Serializable]
   public class Branch {
     public Transform root;
     public Branch[] neighbors;
+    /// <summary> This is the position of the root transform </summary>
+    public Vector3 position { get => root.position; set => root.position = value; }
 
     public Branch(Transform root, Branch[] neighbors) {
       this.root = root;
@@ -124,5 +167,8 @@ public class PathTree : MonoBehaviour {
     public Vector3 MoveTowards(Branch target, float fraction, float length, out float overshootLength, out float newFraction) {
       return PathTree.MoveTowards(this, target, fraction, length, out overshootLength, out newFraction);
     }
+
+    public static Vector3 operator +(Branch a, Branch b) => a.root.position + b.root.position;
+    public static Vector3 operator -(Branch a, Branch b) => a.root.position - b.root.position;
   }
 }

@@ -21,23 +21,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Day:
-        m_Texture: {fileID: 8900000, guid: 18a0be10f0f64ac4c9f679d68e2cf857, type: 3}
+        m_Texture: {fileID: 8900000, guid: 04c228cea18aba34cb1960018883f182, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Night:
-        m_Texture: {fileID: 8900000, guid: 3675d0c3c874f6b479bab57eb7e68c90, type: 3}
+        m_Texture: {fileID: 8900000, guid: 63c5a386967fe40c3a63c7c8b4548f0b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - ExpandsToDay: 1
-    - Fraction: 0.55
+    - ExpandsToDay: 0
+    - Fraction: 0.45
     - NoiseMult: 1.1
     - NoiseScale: 4
     - TimeScale: 0.25
     - Vector1_5D13B68C: 0.2
     m_Colors:
-    - DayColor: {r: 0, g: 0.9582106, b: 1.335078, a: 0}
-    - NightColor: {r: 0, g: 0.06147003, b: 4, a: 0}
+    - DayColor: {r: 4.5412054, g: 1.2363491, b: 0, a: 0}
+    - NightColor: {r: 0.9293095, g: 0, b: 21.112133, a: 0}
     - NoiseMultRange: {r: 0.8, g: 1.2, b: 0, a: 0}
     - Source: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &1399797765782458446

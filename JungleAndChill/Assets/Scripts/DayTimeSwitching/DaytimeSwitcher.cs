@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEditor;
 using UnityEngine.Rendering;
 
@@ -19,6 +20,9 @@ public class DaytimeSwitcher : MonoBehaviour {
   public AnimationCurve bloomCurve;
   public float dayBloomIntensity = 0;
   public float nightBloomIntensity = 3.5f;
+
+  public UnityEvent onDay;
+  public UnityEvent onNight;
 
   private Material mat;
   private UnityEngine.Rendering.Universal.Bloom bloomComp;
@@ -95,10 +99,12 @@ public class DaytimeSwitcher : MonoBehaviour {
       update = true;
       mat.SetInt("ExpandsToDay", 1);
       dir = 1;
+      onNight.Invoke();
     } else if (dayValue == 1) {
       update = true;
       mat.SetInt("ExpandsToDay", 0);
       dir = -1;
+      onDay.Invoke();
     }
   }
 }

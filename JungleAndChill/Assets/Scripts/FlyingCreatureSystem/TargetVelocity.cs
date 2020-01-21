@@ -15,6 +15,7 @@ public class TargetVelocity : MonoBehaviour {
   // Start is called before the first frame update
   void Start() {
     rb = GetComponent<Rigidbody>();
+    if (targetVelocity != 0 && rb.velocity.Equals(Vector3.zero)) rb.velocity = new Vector3(0.001f, 0, 0);
   }
 
   // Update is called once per frame

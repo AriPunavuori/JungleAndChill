@@ -43,7 +43,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 3
+  m_Intensity: 0.56
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -379,6 +379,24 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.19387753
     - serializedVersion: 3
+      time: 0.35496816
+      value: 4.8318276
+      inSlope: 32.043144
+      outSlope: 32.043144
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5550201
+      value: 14.154927
+      inSlope: 32.852966
+      outSlope: 32.852966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
       inSlope: -110.26686
@@ -390,7 +408,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  descaleDuration: 3
+  descaleDuration: 5
   descaleSpeedDivisor: 5
   doTimeScale: 0
   shaderTimeScaleCurve:
@@ -417,7 +435,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  doNoiseScale: 0
+  doNoiseScale: 1
   shaderNoiseScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -634,7 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0316c8e72d8fca74f961511afff63522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayValue: 1
+  dayValue: 0
   switchTime: 5
   light: {fileID: 1238733006}
   dayIntensity: 3

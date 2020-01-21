@@ -197,10 +197,25 @@ PrefabInstance:
       propertyPath: attTransform
       value: 
       objectReference: {fileID: 2039448624}
+    - target: {fileID: 3005633290064633790, guid: 599238e529661ce4fac79914919c0a0b,
+        type: 3}
+      propertyPath: rotationInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005633290064633790, guid: 599238e529661ce4fac79914919c0a0b,
+        type: 3}
+      propertyPath: rotationJitter
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5031134339647319000, guid: 599238e529661ce4fac79914919c0a0b,
         type: 3}
       propertyPath: m_Name
       value: Birb
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031134339647319005, guid: 599238e529661ce4fac79914919c0a0b,
+        type: 3}
+      propertyPath: unrestChance
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 5031134339647319007, guid: 599238e529661ce4fac79914919c0a0b,
         type: 3}
@@ -257,6 +272,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5031134339809505078, guid: 599238e529661ce4fac79914919c0a0b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db3bceb128d32144ca6fd4550ac256bc, type: 2}
+    - target: {fileID: 5031134341186513012, guid: 599238e529661ce4fac79914919c0a0b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db3bceb128d32144ca6fd4550ac256bc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599238e529661ce4fac79914919c0a0b, type: 3}
 --- !u!4 &7810378146385513177 stripped
